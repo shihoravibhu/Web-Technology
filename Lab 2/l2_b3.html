@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        str = prompt("Enter String : ");
+
+        ind = str.indexOf("a");
+        lidn = str.lastIndexOf("a");
+
+        if(ind == -1){
+            document.write("'a' is Not Found In Given String");
+        }
+        else if(ind==lidn){
+            
+            document.write("Only One 'a' is Found In Given String");
+        }
+        else{
+
+            document.write(str.substring(ind+1,lidn));
+            
+        }
+    </script>
+</body>
+</html>

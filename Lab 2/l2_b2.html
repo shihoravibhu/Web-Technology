@@ -1,0 +1,53 @@
+<!-- number in words -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        a = parseInt(prompt("Enter number between 0 to 999 : "));
+        
+        if (isNaN(a)) {
+            document.write("Please enter a valid number.");
+        }
+        else if (a < 0 || a > 999) {
+            document.write("Number is out of range.");
+        }
+        else if (a === 0) {
+            document.write("Zero");
+        }
+        else {
+            units = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+            teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+            tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+            hundreds = ["Hundred"];
+
+            result = "";
+
+            if (a >= 100) {
+                result += units[Math.floor(a / 100)] + hundreds[0];
+                a %= 100;
+            }
+
+            if (a >= 20) {
+                result += tens[Math.floor(a / 10)] + " ";
+                a %= 10;
+            } else if (a >= 10) {
+                result += teens[a - 10] + " ";
+                a = 0;
+            }
+
+            result += units[a];
+
+            document.write(result);
+        }
+
+    </script>
+</body>
+
+</html>

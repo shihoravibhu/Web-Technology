@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        a = parseInt(prompt("Enter Two Digit Number : "));
+
+        pow = a % 10;
+
+        rev = 0;
+
+        while (a != 0) {
+            rev = a % 10 + rev * 10;
+            a = Math.floor(a / 10);
+        }
+
+        base = rev % 10;
+
+        document.write("base " + base + "<br/>");
+        document.write("pow " + pow + "<br/>");
+
+        document.write("ans = base^pow : " + Math.pow(base, pow));
+
+
+
+    </script>
+</body>
+
+</html>

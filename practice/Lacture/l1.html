@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <button onclick="color_Change()">click here</button> -->
+    <script>
+
+        function color_Change() {
+            r = Math.floor(Math.random() * 256);
+            g = Math.floor(Math.random() * 256);
+            b = Math.floor(Math.random() * 256);
+
+            document.body.style.background = `rgb(${r}, ${g}, ${b})`;
+        }
+
+        setInterval(color_Change, 1000);
+
+        // setTimeout(color_Change,3000)
+    </script>
+</body>
+
+</html>
