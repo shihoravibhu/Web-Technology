@@ -37,7 +37,9 @@
             if (a >= 20) {
                 result += tens[Math.floor(a / 10)] + " ";
                 a %= 10;
-            } else if (a >= 10) {
+            } 
+            
+            else if (a >= 10) {
                 result += teens[a - 10] + " ";
                 a = 0;
             }

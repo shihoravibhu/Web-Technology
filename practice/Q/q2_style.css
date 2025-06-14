@@ -1,0 +1,48 @@
+/* tic tac toe */
+body{
+    background-color: gray;
+    text-align: center;
+}
+
+h1{    
+    font-size: 40px;
+}
+
+.container{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.game{
+    height: 35vh;
+    width: 35vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   gap: 2.5vmin;
+}
+
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    background-color: black;
+    border-radius: 2rem;
+    border: 1px solid white;
+    box-shadow: 0 0 1rem rgba(0, 0,0,0.1);
+    font-size: 8vmin;
+    color: #cb221c;
+}
+
+#reset{
+    margin-top: 50px;
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+}
