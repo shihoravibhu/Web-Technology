@@ -1,0 +1,40 @@
+<!-- ascending order -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        arr = [];
+
+        n = parseInt(prompt("Enter size :"));
+
+        for (i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Enter Element :" + (i+1)));
+        }
+
+        for (i = 0; i < n - 1; i++) {
+            minIndex = i;
+            for (j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+
+                    minIndex = j;
+                }
+            }
+
+            temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+
+        document.writeln(arr);
+
+    </script>
+</body>
+
+</html>

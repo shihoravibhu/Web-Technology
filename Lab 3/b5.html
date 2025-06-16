@@ -1,0 +1,35 @@
+<!-- Find Index Of Word In sentance -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        str = prompt("Enter Sentance : ");
+
+        s = str.split(" ");
+
+        word = prompt("Enter Word (whuch held sentance) :");
+
+        flag = false;
+
+        for (i = 0; i < s.length; i++) {
+            if (s[i] === word) {
+                document.write(`Word Held In Sentance at ${i}th Index `);
+                flag = true;
+                break;
+            }
+        }
+
+        if (!flag) {
+            document.write("Word Not In Found");
+        }
+    </script>
+</body>
+
+</html>
