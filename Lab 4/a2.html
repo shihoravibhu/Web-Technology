@@ -1,0 +1,109 @@
+<!-- 
+
+
+1. Mutator Methods (Modify the array)
+
+push(): Adds one or more elements to the end of an array.
+pop(): Removes the last element from an array.
+shift(): Removes the first element from an array.
+unshift(): Adds one or more elements to the beginning of an array.
+splice(): Adds/removes elements at a specific index.
+sort(): Sorts the elements of an array.
+reverse(): Reverses the order of elements in an array.
+
+
+2. Accessor Methods (Do not modify the array)
+
+concat(): Merges two or more arrays.
+slice(): Returns a shallow copy of a portion of an array.
+indexOf(): Returns the first index of a specified element.
+lastIndexOf(): Returns the last index of a specified element.
+includes(): Checks if an array contains a specific element.
+join(): Joins all elements into a string.
+
+
+3. Iteration Methods (Operate on each element)
+forEach(): Executes a function for each array element.
+map(): Creates a new array with the results of calling a function on every element.
+filter(): Creates a new array with elements that pass a test.
+reduce(): Reduces the array to a single value by applying a function.
+some(): Checks if at least one element passes a test.
+every(): Checks if all elements pass a test.
+find(): Returns the first element that satisfies a condition.
+findIndex(): Returns the index of the first element that satisfies a condition.
+
+
+4. Other Useful Methods
+flat(): Flattens nested arrays.
+flatMap(): Maps each element and flattens the result.
+from(): Creates an array from an iterable or array-like object.
+isArray(): Checks if a value is an array.
+fill(): Fills elements with a static value.
+copyWithin(): Copies part of an array to another location in the same array.
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        arr = [9,6,5,3,2];
+
+        // from back
+        arr.push(10);   // add from back
+        arr.pop();      // remove from back
+        // document.write(arr);
+        
+        //from front
+        arr.unshift(7)     // add from front
+        arr.shift()     // remove from front
+        document.write(arr);
+
+        document.write("<br/>");
+        document.write("<br/>");
+        
+        arr.splice(1,3,8,9,0);            // index 1 thi 3 element removes and teni jagya ye 8,9,0 replace thai jase
+        document.write(arr);
+        
+        document.write("<br/>");
+        document.write("<br/>");
+        
+        arr.slice(1,3);
+        document.write("after splice :");   
+        document.write(arr);
+        document.write("<br/>");
+        document.write("<br/>");
+
+        document.write("removed element by splice :"+arr.slice(1,3));  
+        document.write("<br/>");
+        document.write("<br/>");
+        
+        arr.sort();
+        document.write("sorted array : "+arr);
+        document.write("<br/>");
+        document.write("<br/>");
+        
+        arr.reverse();
+        document.write("reverse array : "+arr);
+        document.write("<br/>");        
+        document.write("<br/>");        
+        
+        document.write("After join mentod  : "+arr.join("_"));
+        document.write("<br/>");
+        document.write("<br/>");
+        
+        arr2 = [5,6,7];
+        arr = arr.concat(arr2);
+        document.write("After concate mentod  : "+arr);
+        document.write("<br/>");
+        document.write("<br/>");       
+
+        
+    </script>
+</body>
+</html>
