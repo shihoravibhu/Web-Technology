@@ -1,0 +1,129 @@
+<!-- 4. Write a JavaScript program to validate user data given from the HTML form (A)
+ 1) username must be of minimum 8 characters
+ 2) password must contain at least 1 digit and 1 special character and should be between 8
+    12 characters
+ 3) password and repeat password must be same
+ 4) age must be greater than 18 (calculate from date of birth)
+ 5) enrollment must be of 11 digits
+ 6) email validation -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="validate(event)">
+
+        <label for="inp">FirstName : </label>
+        <input type="text" name="" id="inp"><br><br>
+
+        <label for="pass">Password : </label>
+        <input type="password" id="pass"><br><br>
+
+        <label for="pass2">Repeat Password : </label>
+        <input type="password" id="pass2"><br><br>
+
+        <label for="dt">Birth Date : </label>
+        <input type="date" name="" id="dt"><br><br>
+
+        <label for="enroll">Enrollment : </label>
+        <input type="text" id="enroll"><br><br>
+
+        <label for="email">Email : </label>
+        <input type="email" id="email"><br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <script>
+        function validate() {
+
+            event.preventDefault();
+
+            // check username must be of minimum 8 characters
+            name = document.getElementById("inp").value.trim();
+
+            if (name.length < 8) {
+                alert("Please Enter Valid UserName (at least 8 characters)");
+                return false;   // stops form submission
+            }
+
+
+            // password must contain at least 1 digit and 1 special character and should be between 8
+            // 12 characters
+            password = document.getElementById("pass").value;
+            password2 = document.getElementById("pass2").value;
+
+            passRegExp = new RegExp(/^(?=.*\d)(?=.*[\W_]).{8,12}$/);
+
+            if (!passRegExp.test(password)) {
+                alert("Enter Valid Password");
+                return false;
+            }
+
+            // Reapeat Password Validation
+
+            if (password != password2) {
+                alert("Password Do Not Match");
+                return false;
+            }
+
+            // Age Validation
+
+            date = document.getElementById("dt").value;
+            if (!dob) {
+                alert("Please enter your birth date.");
+                return false;
+            }
+            const birthDate = new Date(dob);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            if (age < 18) {
+                alert("Age must be greater than 18.");
+                return false;
+            }
+
+            // Enrollment Validation
+
+            enroll = document.getElementById("enroll").value.trim();
+            enromentParttern = "^\d{11}$";
+            enrolRegExp = new RegExp(enromentParttern);
+
+            if (!enrolRegExp.test(enromentParttern)) {
+                alert("Enter Valid Enrollment");
+                return false;
+            }
+
+            // Email Validation
+
+            email = document.getElementById("email").value.trim();
+            emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                alert("Invalid email address.");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+
+
+
+
+
+        }
+    </script>
+</body>
+
+
+</html>

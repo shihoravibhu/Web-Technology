@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        img {
+            width: 100px;
+            position: relative;
+            left: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button onclick="plus()" id="zoomin">+</button>
+    <button onclick="minus()" id="zoomout">-</button>
+    <button onclick="left()" id="left">&lt;-</button>
+    <button onclick="right()" id="right">-&gt;</button>
+    <button onclick="autoleft()" id="autoleft">Auto Left</button>
+    <button onclick="autoright()" id="autoright">Auto Right</button>
+    <br><br>
+    <img src="img/OIP.webp" alt="" id="pic">
+
+    <script>
+        let width = 100;
+        let incriment = 0;
+        let autoMoveInterval = null;
+
+        function plus() {
+            width += 10;
+            document.getElementById("pic").style.width = width + "px";
+        }
+        function minus() {
+            width -= 10;
+            document.getElementById("pic").style.width = width + "px";
+        }
+        function left() {
+            incriment -= 10;
+            document.getElementById("pic").style.left = incriment + "px";
+        }
+        function right() {
+            incriment += 10;
+            document.getElementById("pic").style.left = incriment + "px";
+
+        }
+        function autoleft() {
+            clearInterval(autoMoveInterval);
+            autoMoveInterval = setInterval(left, 30);
+
+        }
+        function autoright() {
+            clearInterval(autoMoveInterval);
+            autoMoveInterval = setInterval(right, 30);
+        }
+
+    </script>
+
+
+</body>
+
+</html>
