@@ -16,6 +16,55 @@
     <title>Document</title>
 </head>
 
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
+    form {
+        background: #fff;
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 30px 40px 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #333;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="email"] {
+        width: 100%;
+        padding: 8px 10px;
+        margin-bottom: 18px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 15px;
+    }
+    button[type="submit"] {
+        background: #0078d7;
+        color: #fff;
+        border: none;
+        padding: 10px 22px;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    button[type="submit"]:hover {
+        background: #005fa3;
+    }
+
+</style>
+
 <body>
     <form action="" onsubmit="validate(event)">
 
@@ -42,9 +91,9 @@
     </form>
 
     <script>
-        function validate() {
+        function validate(e) {
 
-            event.preventDefault();
+            e.preventDefault();
 
             // check username must be of minimum 8 characters
             name = document.getElementById("inp").value.trim();
@@ -76,7 +125,7 @@
 
             // Age Validation
 
-            date = document.getElementById("dt").value;
+            dob = document.getElementById("dt").value;
             if (!dob) {
                 alert("Please enter your birth date.");
                 return false;
@@ -85,9 +134,11 @@
             const today = new Date();
             let age = today.getFullYear() - birthDate.getFullYear();
             const m = today.getMonth() - birthDate.getMonth();
+
             if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
                 age--;
             }
+
             if (age < 18) {
                 alert("Age must be greater than 18.");
                 return false;
@@ -96,10 +147,10 @@
             // Enrollment Validation
 
             enroll = document.getElementById("enroll").value.trim();
-            enromentParttern = "^\d{11}$";
+            enromentParttern = /^\d{11}$/;
             enrolRegExp = new RegExp(enromentParttern);
 
-            if (!enrolRegExp.test(enromentParttern)) {
+            if (!enrolRegExp.test(enroll)) {
                 alert("Enter Valid Enrollment");
                 return false;
             }
