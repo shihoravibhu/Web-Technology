@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #764ba2, white);
+            min-height: 100vh;
+        }
+
+        .login-container {
+            width: 370px;
+            margin: 60px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 28px 28px 18px 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(44, 44, 150, 0.18);
+            color: #222;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4a3fa3;
+            margin-bottom: 24px;
+        }
+
+        label {
+            font-weight: 500;
+            color: #4a3fa3;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            margin-bottom: 18px;
+            border: 1.5px solid #bdbdfc;
+            border-radius: 7px;
+            background: #f7f7fb;
+            color: #222;
+            font-size: 15px;
+            transition: border 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="date"]:focus {
+            border: 1.5px solid #764ba2;
+            outline: none;
+        }
+
+        .error {
+            color: #e74c3c;
+            font-size: 13px;
+            margin-top: -12px;
+            margin-bottom: 10px;
+            min-height: 18px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            border-radius: 7px;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 2px 8px rgba(44, 44, 150, 0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 4px 16px rgba(44, 44, 150, 0.18);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>User Registration Form</h2>
+        <form action="" id="formA">
+            <label>Username : </label>
+            <input type="text" id="username">
+            <h4 class="error" id="error1"></h4>
+
+            <label>password : </label>
+            <input type="password" id="password">
+            <h4 class="error" id="error2"></h4>
+
+            <label>Repeat Password : </label>
+            <input type="password" id="repeatpassword">
+            <h4 class="error" id="error3"></h4>
+
+            <label>Date of Birth : </label>
+            <input type="date" id="dob">
+            <h4 class="error" id="error4"></h4>
+
+            <label>Enrollment No. : </label>
+            <input type="text" id="enrollment">
+            <h4 class="error" id="error5"></h4>
+
+            <label>Email : </label>
+            <input type="text" id="email">
+            <h4 class="error" id="error6"></h4>
+
+            <button type="submit" value="Submit">Submit</button>
+            <br>
+            <!-- <h4 class="error" id="error"></h4> -->
+        </form>
+    </div>
+    <script>
+
+        // USERNAME VALIDATION
+        userName = document.getElementById("username")
+        error1 = document.getElementById("error1")
+
+        document.getElementById("username").addEventListener("blur", () => {
+
+            if (userName.value === "") {
+                error1.innerHTML = "Username is required"
+                error1.style.color = "red"
+                username.style.border = "1px solid red"
+                // return false;
+            }
+
+            else if (userName.value.length < 8) {
+                error1.innerHTML = "Username must be 8 character"
+                error1.style.color = "red"
+                username.style.border = "1px solid red"
+            }
+
+            else {
+                error1.innerHTML = ""
+                username.style.border = "1px solid green";
+            }
+
+        })
+
+
+
+        const passwordInput = document.getElementById("password");
+        const repeatPasswordInput = document.getElementById("repeatpassword");
+        const error2 = document.getElementById("error2");
+        const error3 = document.getElementById("error3");
+
+        // PASSWORD VALIDATION
+        passwordInput.addEventListener("blur", () => {
+            const password = passwordInput.value.trim();
+
+            if (password === "") {
+                error2.innerHTML = "Password is required.";
+                passwordInput.style.border = "1px solid red";
+            } else if (password.length < 8 || password.length > 12) {
+                error2.innerHTML = "Password must be 8-12 characters.";
+                passwordInput.style.border = "1px solid red";
+            } else {
+                error2.innerHTML = "";
+                passwordInput.style.border = "1px solid green";
+            }
+        });
+
+        //  REPEAT PASSWORD VALIDATION
+        repeatPasswordInput.addEventListener("blur", () => {
+            const password = passwordInput.value.trim();
+            const repeatPassword = repeatPasswordInput.value.trim();
+            if (repeatPassword === "") {
+                error3.innerHTML = "Please enter repeat password.";
+                repeatPasswordInput.style.border = "1px solid red";
+            } else if (password !== repeatPassword) {
+                error3.innerHTML = "Passwords do not match.";
+                repeatPasswordInput.style.border = "1px solid red";
+            } else {
+                error3.innerHTML = "";
+                repeatPasswordInput.style.border = "1px solid green";
+            }
+        });
+
+        // BIRTHDATE VALIDATION
+
+        error4 = document.getElementById("error4")
+        dob = document.getElementById("dob")
+
+        dob.addEventListener("blur", () => {
+
+            if (!dob.value) {
+                error4.innerHTML = "Please enter your date birth."
+                dob.style.border = "1px solid red"
+                error4.style.color = "red"
+                // return false;
+            } else {
+                error4.innerHTML = ""
+                dob.style.border = "1px solid green"
+            }
+        })
+
+        // ENROLLMENT VELIDATION
+
+        error5 = document.getElementById("error5")
+        enrollment = document.getElementById("enrollment")
+
+         enrollment.addEventListener("blur", () => {
+             
+             if (enrollment.value.trim() == "") {
+                 error5.innerHTML = "Please enter enrollment number"
+                 enrollment.style.border = "1px solid red"
+                 error5.style.color = "red"
+                 // return false
+                }
+                if (enrollment.value.length != 11) {
+                    error5.innerHTML = "Enrollment No. must be at least 11 characters."
+                    enrollment.style.border = "1px solid red"
+                    error5.style.color = "red"
+                    // return false
+                } else {
+                    error5.innerHTML = ""
+                    enrollment.style.border = "1px solid green"
+                    
+                }
+            })
+            
+            // E,AIL VELIDATION
+            
+            error6 = document.getElementById("error6")
+            email = document.getElementById("email")
+            emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            emailRegex = new RegExp(emailPattern)
+            
+            email.addEventListener("blur", () => {
+
+                if (email.value.trim() == "") {
+                    error6.innerHTML = "please enter email"
+                    email.style.border = "1px solid red"
+                    error6.style.color = "red"
+                    // return false;
+                    
+                } else if (!emailRegex.test(email.value)) {
+                    error6.innerHTML = "invalid email"
+                    email.style.border = "1px solid red"
+                    error6.style.color = "red"
+                    // return false;
+                    
+                } else {
+                    error.innerHTML = "";
+                    email.style.border = "1px solid green"
+                }
+            })
+
+    </script>
+</body>
+
+</html>

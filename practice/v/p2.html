@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .login-container {
+            width: 350px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px gray;
+        }
+
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        input,
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .login-container {
+            background-color: rgb(58, 57, 57);
+            color: white;
+        }
+
+        button {
+            background-color: rgb(44, 44, 150);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>User Registration Form</h2>
+        <form action="" id="formA" onsubmit="return validateForm()">
+            <label>Username : </label>
+            <input type="text" id="username">
+            <h4 class="error" id="error1"></h4>
+
+            <label>password : </label>
+            <input type="password" id="password">
+            <h4 class="error" id="error2"></h4>
+
+            <label>Repeat Password : </label>
+            <input type="password" id="repeatpassword">
+            <h4 class="error" id="error3"></h4>
+
+            <label>Date of Birth : </label>
+            <input type="date" id="dob">
+            <h4 class="error" id="error4"></h4>
+
+            <label>Enrollment No. : </label>
+            <input type="text" id="enrollment">
+            <h4 class="error" id="error5"></h4>
+
+            <label>Email : </label>
+            <input type="text" id="email">
+            <h4 class="error" id="error6"></h4>
+
+            <button type="submit" value="Submit">Submit</button>
+            <br>
+            <!-- <h4 class="error" id="error"></h4> -->
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            error1 = document.getElementById("error1")
+            userName = document.getElementById("username").value.trim()
+            if (userName.trim() == "") {
+                error1.innerHTML = "Username is required"
+                return false;
+            }
+            if (userName.length < 8) {
+                error1.innerHTML = "Username must be 8 character"
+            }
+            else {
+                error1.innerHTML = ""
+            }
+            error2 = document.getElementById("error2")
+            password = document.getElementById("password").value.trim();
+            passPattern = "^[0-6]"
+            passRegex = new RegExp(passPattern)
+            if (password.trim() == "") {
+                error2.innerHTML = "Password is required.";
+                return false;
+            }
+            if (!passRegex.test(password)) {
+                error2.innerHTML = "Password must be 8-12 characters."
+                return false;
+            }
+            else {
+                error2.innerHTML = "";
+            }
+
+            error3 = document.getElementById("error3")
+            repeatPassword = document.getElementById("repeatpassword").value
+            if (repeatPassword.trim() == "") {
+                error3.innerHTML = "Please eneter repeat password"
+                return false;
+            }
+            if (password != repeatPassword) {
+                error3.innerHTML = "Password do not match."
+                return false;
+            }
+            else {
+                error3.innerHTML = "";
+
+            }
+            error4 = document.getElementById("error4")
+            dob = document.getElementById("dob").value
+            if (!dob) {
+                error4.innerHTML = "Please enter your date birth."
+                return false;
+            }
+            else {
+                error4.innerHTML = ""
+            }
+            error5 = document.getElementById("error5")
+            enrollment = document.getElementById("enrollment").value
+            if (enrollment.trim() == "") {
+                error5.innerHTML = "Please enter enrollment number"
+                return false
+            }
+            if (enrollment.length != 11) {
+                error5.innerHTML = "Enrollment No. must be at least 11 characters."
+                return false
+            }
+            else {
+                error5.innerHTML = ""
+
+            }
+                error6 = document.getElementById("error6")
+                email = document.getElementById("email").value.trim()
+                emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                emailRegex = new RegExp(emailPattern)
+
+                if (email.trim() == "") {
+                    error6.innerHTML = "please enter email"
+                    return false;
+
+                }
+                else if (!emailRegex.test(email)) {
+                    error6.innerHTML = "invalid email"
+                    return false;
+
+                }
+                else {
+                    error.innerHTML = "";
+                }
+            }
+    </script>
+</body>
+
+</html>

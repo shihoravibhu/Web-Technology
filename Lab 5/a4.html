@@ -126,18 +126,20 @@
             // Age Validation
 
             dob = document.getElementById("dt").value;
+
             if (!dob) {
                 alert("Please enter your birth date.");
                 return false;
             }
+
             const birthDate = new Date(dob);
             const today = new Date();
             let age = today.getFullYear() - birthDate.getFullYear();
-            const m = today.getMonth() - birthDate.getMonth();
+            // const m = today.getMonth() - birthDate.getMonth();
 
-            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                age--;
-            }
+            // if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            //     age--;
+            // }
 
             if (age < 18) {
                 alert("Age must be greater than 18.");
@@ -158,7 +160,8 @@
             // Email Validation
 
             email = document.getElementById("email").value.trim();
-            emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            emailpattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            emailRegex = new RegExp(emailpattern);
 
             if (!emailRegex.test(email)) {
                 alert("Invalid email address.");

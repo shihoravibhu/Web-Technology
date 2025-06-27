@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click</button>
+    <h1 id="txt"></h1>
+
+    <script>
+        btn.addEventListener("click",()=>{
+            txt.innerHTML = "Click Event Fires";
+            txt.style.color = "green"
+        })
+        btn.addEventListener("dblclick",()=>{
+            txt.innerHTML = "DBLClick Event Fires";
+            txt.style.color = "green"
+        })
+        btn.addEventListener("mouseover",()=>{     // only one jyare cursor btn par thi over thase tyare
+            txt.innerHTML = "Mouseover Event Fires";
+            txt.style.color = "green"
+        })
+        // btn.addEventListener("mousemove",()=>{       // continues chalu rese jya sudhi cursor btn ni andar che tya sudhi
+        //     txt.innerHTML = "mousemove Event Fires";
+        //     txt.style.color = "green"
+        // })
+        btn.addEventListener("mousedown",()=>{   // jya sudhi click kariyu hoi tyare
+            txt.innerHTML = "Mousedown Event Fires";
+            txt.style.color = "green"
+        })
+       
+    </script> 
+</body>
+</html>

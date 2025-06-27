@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="b">
+    <button id="btn">Click To DarkMode</button>
+    <script>
+         btn.addEventListener("click",()=>{
+            b.style.backgroundColor = "black";
+            btn.innerHTML = "Double click to LightMode"
+        })
+        btn.addEventListener("dblclick",()=>{
+            b.style.backgroundColor = "white";
+            btn.innerHTML = "click to DarkMode"
+        })
+    </script>
+</body>
+</html>
