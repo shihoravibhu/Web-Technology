@@ -1,0 +1,49 @@
+ <!-- 4. Demonstrate the spread operator. (A) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // By Array
+
+       arr1 = [1,2,3,4]
+       arr2 = [5,6,7,8,9]
+
+       mergeArr = [...arr1,...arr2,70];             // bey array merge and 70 add
+
+       console.log(mergeArr);
+
+
+       // Object
+
+       user = {
+        name:"vibhu",
+        age:18,
+        dep:"CSE",
+        sem:3
+       }
+
+       user2 = {
+        name:"kuldeep",
+        address:"rajkot",
+        clg:"du"        
+       }
+
+       mergeuser = {...user,...user2};   // je comman key hase tene overwrite karse mergeuser
+                                            //etle k ahiya name overwrite thase
+
+       console.log(mergeuser);
+
+
+
+
+
+    </script>
+</body>
+</html>

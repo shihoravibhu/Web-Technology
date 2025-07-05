@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(90deg, #000000, #6e6e6e);
+        color: white;
+        text-align: center;
+    }
+
+    #mainsnake {
+        width: 100px;
+        height: 20px;
+        background-color: greenyellow;
+        filter: drop-shadow(0px 0px 5px lime);
+        /* display: inline-block; */
+        position: absolute;
+        top: 110px;
+        left: 0px;
+    }
+
+    h1 {
+        margin-top: 20px;
+        font-size: 24px;
+    }
+
+    /* #myImg, */
+    #khavanu {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        transition: transform 0.1s;
+    }
+
+    /* #myImg {
+        top: 100px;
+        left: 0px;
+        filter: drop-shadow(0px 0px 5px lime);
+    } */
+
+    #khavanu {
+        left: 300px;
+        top: 300px;
+        filter: drop-shadow(0px 0px 5px red);
+    }
+
+    button {
+        margin: 10px 5px;
+        padding: 10px 20px;
+        background-color: #222;
+        color: #fff;
+        border: 2px solid lime;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    button:hover {
+        background-color: lime;
+        color: black;
+    }
+
+    /* #myImg {
+        position: absolute;
+        top: 100px;
+        left: 0px
+    } */
+
+    #khavanu {
+        position: absolute;
+        left: 300px;
+        top: 300px;
+
+    }
+</style>
+
+
+
+
+<!-- OnkeyUp means keyBoard ma rahel badhi j key access kari sakase including ctrl alt downkey .. -->
+<!-- OnkeyPress means keyboard ma rahel k je nu output apde screen par joi sakiye ee mate etle k ctrl alt downkey .. nai chale -->
+
+<body onkeyup="checkInput(event)">
+    <button onclick="autoLeft()">Left</button>
+    <button onclick="autoRight()">Right</button>
+    <button onclick="autoTop()">Up</button>
+    <button onclick="autoDown()">Down</button>
+    <h1>Current Life : <span id="currentLifeSpan">3</span>, Current Score : <span id="currentScoreSpan">0</span></h1>
+    <!-- <img src="img/l5_snakeGame/snakeR.png" id="myImg" /> -->
+    <div id="mainsnake"></div>
+    <img src="img/l5_snakeGame/apple.png" id="khavanu" onclick="changeKhavanuPosition()" />
+
+    <script>
+
+        currentX = 0;
+        currentY = 110;
+        intRef = 0;
+        currentLife = 3;
+        currentScore = -1;
+
+        randomX = 300;
+        randomY = 300;
+
+        currentSpeed = 5;
+
+        function checkInput(e) {
+            if (e.key == "ArrowUp") {
+                autoTop();
+            }
+            if (e.key == "ArrowDown") {
+                autoDown();
+            }
+            if (e.key == "ArrowLeft") {
+                autoLeft();
+            }
+            if (e.key == "ArrowRight") {
+                autoRight();
+            }
+        }
+
+        function checkLimt() {
+
+            if (currentX > screen.availWidth - 90 ||
+                currentY > screen.availHeight - 90 ||
+                currentX < 0 ||
+                currentY < 0) {
+
+                currentLife--;
+
+                currentX = Math.floor(screen.availWidth / 2);
+                currentY = Math.floor(screen.availHeight / 2);
+
+                document.getElementById("currentLifeSpan").innerHTML = currentLife;
+
+            }
+
+            if (currentLife < 0) {
+
+                document.body.innerHTML = "<img src='img/l5_snakeGame/gameOver.gif' style='height:600px; margin:auto; display:block;' />";
+            }
+
+            dx = randomX - currentX;
+            dy = randomY - currentY;
+            distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 60) {
+                changeKhavanuPosition();
+            }
+
+        }
+
+        function autoRight() {
+            clearInterval(intRef);
+            intRef = setInterval(moveRight, currentSpeed);
+        }
+
+        function moveRight() {
+            currentX++;
+            mainsnake.style.left = currentX + "px";
+            mainsnake.style.transform = "rotate(0deg)";
+            checkLimt();
+        }
+
+        function autoLeft() {
+            clearInterval(intRef);
+            intRef = setInterval(moveLeft, currentSpeed);
+        }
+        function moveLeft() {
+            currentX--;
+            mainsnake.style.left = currentX + "px";
+            mainsnake.style.transform = "rotate(180deg)";
+            checkLimt();
+        }
+
+        function autoTop() {
+            clearInterval(intRef);
+            intRef = setInterval(moveTop, currentSpeed);
+        }
+
+        function moveTop() {
+            currentY--;
+            mainsnake.style.top = currentY + "px";
+            mainsnake.style.transform = "rotate(-90deg)";
+            checkLimt();
+        }
+
+        function autoDown() {
+            clearInterval(intRef);
+            intRef = setInterval(moveDown, currentSpeed);
+        }
+
+        function moveDown() {
+            currentY++;
+            mainsnake.style.top = currentY + "px";
+            mainsnake.style.transform = "rotate(90deg)";
+            checkLimt();
+        }
+
+        function changeKhavanuPosition() {
+            currentScore++;
+
+            let currentWidth = parseInt(mainsnake.style.width) || 100;
+            mainsnake.style.width = (currentWidth + 10) + "px";
+
+            if (currentScore > 5) {
+                currentSpeed = 3;
+            }
+
+            if (currentScore > 10) {
+                currentSpeed = 1;
+            }
+
+            document.getElementById("currentScoreSpan").innerHTML = currentScore;
+
+            randomX = parseInt(Math.random() * (screen.availWidth - 90));
+            randomY = parseInt(Math.random() * (screen.availHeight - 90));
+
+            document.getElementById("khavanu").style.left = randomX + "px";
+            document.getElementById("khavanu").style.top = randomY + "px";
+
+        }
+
+        changeKhavanuPosition();
+
+    </script>
+</body>
+
+</html>

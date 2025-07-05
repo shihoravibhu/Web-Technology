@@ -1,0 +1,51 @@
+<!-- 6. Demonstrate the Array and Object Destructuring. (B) -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+
+    <script>
+         // 1 By Array
+        arr = [1,2,3,4,5,6,7,8,9,10]
+
+        // let [a,b] = arr;
+        // console.log(a,b);
+        
+        // let [a,,c] = arr;
+        // console.log(a,c);
+
+        let [a,,c,...d] = arr;
+        console.log(a,c);
+        console.log(d);      // pela 3 element sivai badha element no array return thase
+
+
+        // let [...v,y,z] = arr;
+        // console.log(a,c);
+        // console.log();
+
+
+
+        // 2 By Object
+
+        user = {
+            name:"vibhu",
+            age:18,
+            dep:"CSE",
+            sem:3
+        }
+
+        // let {name,age} = user;
+        // console.log(name,age);
+        // console.log(dep);            // key value dep lidhi nathi so error avse 
+       //console.log(user.dep)      // aa chale
+
+        let {age,name} = user;
+        console.log(name,age);
+    </script>
+    
+ </body>
+ </html>

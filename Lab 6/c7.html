@@ -1,0 +1,101 @@
+ <!-- 7. WAP to perform CRUD operation on Array using HTML and JavaScript. (C) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD Operations on Array</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        input, button { margin: 5px; }
+    </style>
+</head>
+<body>
+    <h2>CRUD Operations on Array</h2>
+
+    <!-- Input for adding element -->
+    <input type="text" id="elementInput" placeholder="Enter element">
+    <button onclick="addElement()">Add Element</button>
+    <br>
+
+    <!-- Inputs for updating element at a specific index -->
+    <input type="number" id="updateIndex" placeholder="Index to Update">
+    <input type="text" id="updateValue" placeholder="New Value">
+    <button onclick="updateElement()">Update Element</button>
+    <br>
+
+    <!-- Input for deleting element at a specific index -->
+    <input type="number" id="deleteIndex" placeholder="Index to Delete">
+    <button onclick="deleteElement()">Delete Element</button>
+    <br><br>
+
+    <!-- Button to display current array -->
+    <button onclick="displayArray()">Display Array</button>
+
+    <h3>Array Elements:</h3>
+    <p id="arrayDisplay"></p>
+
+    <script>
+        // Initialize an empty array to perform CRUD operations
+        let arr = [];
+
+        // Function to add element to the array (Create)
+        function addElement() {
+            let element = document.getElementById("elementInput").value;
+            if (element !== "") {
+                arr.push(element); // add element to array
+                // alert(element + " added to array.");
+                document.getElementById("elementInput").value = ""; // clear input
+            } else {
+                alert("Please enter a value to add.");
+            }
+        }
+
+        // Function to display current array elements (Read)
+        function displayArray() {
+            document.getElementById("arrayDisplay").innerText = arr.join(", ");
+        }
+
+        // Function to update element at a given index (Update)
+        function updateElement() {
+            let index = parseInt(document.getElementById("updateIndex").value);
+            let newValue = document.getElementById("updateValue").value;
+
+            // Validate index and input
+            if (isNaN(index) || index < 0 || index >= arr.length) {
+                alert("Invalid index for update.");
+                return;
+            }
+            if (newValue === "") {
+                alert("Please enter a new value to update.");
+                return;
+            }
+
+            arr[index] = newValue; // update element at given index
+            // alert("Element updated at index " + index);
+            displayArray(); // refresh display
+
+            // clear input fields
+            document.getElementById("updateIndex").value = "";
+            document.getElementById("updateValue").value = "";
+        }
+
+        // Function to delete element at a given index (Delete)
+        function deleteElement() {
+            let index = parseInt(document.getElementById("deleteIndex").value);
+
+            // Validate index
+            if (isNaN(index) || index < 0 || index >= arr.length) {
+                alert("Invalid index for deletion.");
+                return;
+            }
+
+            let deletedValue = arr.splice(index, 1); // remove 1 element at index
+            alert("Deleted element: " + deletedValue);
+            displayArray(); // refresh display
+
+            // clear input field
+            document.getElementById("deleteIndex").value = "";
+        }
+    </script>
+</body>
+</html>

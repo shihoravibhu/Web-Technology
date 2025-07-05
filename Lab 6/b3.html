@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body id="b">
 
     <!-- <button id="btn"></button> -->
-    
+
     <h1 id="txt"></h1>
 
     <script>
 
-       b.addEventListener("keydown",(e)=>{   // when holding key
-            // txt.innerHTML = e.key ;
-            txt.innerHTML = "keyDown event" ;
-            txt.style.color = "green"
+        b.addEventListener("keydown", (e) => {   // when holding key
+            txt.innerHTML = e.key ;
+            // txt.innerHTML = "keyDown event";
+            // txt.style.color = "green"
         })
-       b.addEventListener("keyup",(e)=>{   // when up key
-            // txt.innerHTML = e.key ;
-            txt.innerHTML = "KeyUp event" ;
-            txt.style.color = "darkgray"
-        })
-       b.addEventListener("keypress",(e)=>{   
-            // txt.innerHTML = e.key ;
-            txt.innerHTML = "keyPress event" ;
-            txt.style.color = "blue"
-        })
-       
-    </script> 
+
+        // b.addEventListener("keyup", (e) => {   // when up key
+        //     // txt.innerHTML = e.key ;
+        //     txt.innerHTML = "KeyUp event";
+        //     txt.style.color = "darkgray"
+        // })
+        
+        // b.addEventListener("keypress", (e) => {
+        //     // txt.innerHTML = e.key ;
+        //     txt.innerHTML = "keyPress event";
+        //     txt.style.color = "blue"
+        // })
+
+    </script>
 </body>
+
 </html>

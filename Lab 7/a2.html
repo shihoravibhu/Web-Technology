@@ -1,0 +1,84 @@
+<!-- 2. Demonstrate the difference between let and var. (A) -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- let datatype ekvar declare thai gyu to tene redeclare nai kari sakiye 
+        but reasssing kari sakiye
+
+        scope : block
+
+            WRONG  (redeclaration X)     
+
+        ex: let a=10;
+            let a=10;     
+
+            RIGHT (reassigning Thai)
+
+            let a=10;
+            a=20;
+      -->
+
+
+
+    <!-- const datatype ekvar declare thai gyu to tene redeclare nai kari sakiye 
+        but reasssing pan nai kari sakiye
+
+        scope : block
+
+          WRONG  (redeclaration X)     
+
+        ex: const a=10;
+            const a=10;     
+
+            RIGHT (reassigning X)
+
+            const a=10;
+            a=20;
+      -->
+
+    <!-- Var datatype ekvar declare thai gyu to tene redeclare pan kari sakiye 
+        but reasssing kari sakiye
+
+        scope : function
+
+          WRONG  (redeclaration Thai)     
+
+        ex: var a=10;
+            var a=10;     
+
+            RIGHT (reassigning Thai)
+
+            var a=10;
+            a=20;
+      -->
+
+    <script>
+        function abc() {
+
+
+            if (true) {
+                let a = 10;
+                const b = 20;
+                var c = 10;
+
+            }
+
+            // console.log(a) // nai thai print
+            // console.log(b)  // nai thai print
+            console.log(c)  // thase print karnke scope function che not block function ni bare nai thai
+        }
+        
+        abc();
+
+    </script>
+</body>
+
+</html>

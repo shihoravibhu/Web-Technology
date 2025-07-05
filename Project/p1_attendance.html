@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+</head>
+
+
+
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 48px;
+        margin: 20px 0;
+        color: #2f4858;
+    }
+
+    #currentDateTime {
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    #display {
+        background-color: #74b9ff;
+        border-radius: 15px;
+        margin: 10px auto;
+        padding: 15px;
+        width: 90%;
+        max-width: 600px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.5s ease-in-out, transform 0.3s ease;
+    }
+
+    #display:active {
+        background-color: #00cec9;
+        transform: scale(1.05);
+    }
+
+    #bigRollNoDisplay {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 600;
+        color: #ffffff;
+    }
+
+    #absentNo,
+    #absentStudents {
+        text-align: center;
+        font-size: 20px;
+        color: #334e68;
+        margin: 8px;
+    }
+
+    #all {
+        text-align: center;
+        margin: 15px;
+    }
+
+    #all button {
+        background-color: #2f855a;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    #all button:hover {
+        background-color: #276749;
+    }
+
+    table {
+        background-color: #ffffff;
+        width: 95%;
+        max-width: 1000px;
+        margin: 20px auto;
+        border-collapse: collapse;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease-in;
+    }
+    th{
+        background-color: black;
+        color: white;
+    }
+
+    /* table tr:hover{
+        background-color: #d9e2ec;
+    } */
+
+    table th,
+    table td {
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f8fafc;
+    }
+
+    table tr:nth-child(odd) {
+        background-color: #e2e8f0;
+    }
+
+    table tr:first-child {
+        background-color: #2b6cb0;
+        color: white;
+        font-weight: bold;
+    }
+
+    #presentButton,
+    #absentButton {
+        border: none;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: transform 0.1s, background 0.3s;
+    }
+
+    #presentButton {
+        background-color: #38a169;
+        color: white;
+    }
+
+    #presentButton:hover {
+        background-color: #2f855a;
+        transform: scale(1.05);
+    }
+
+    #absentButton {
+        background-color: #e53e3e;
+        color: white;
+    }
+
+    #absentButton:hover {
+        background-color: #c53030;
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 36px;
+        }
+
+        #bigRollNoDisplay {
+            font-size: 24px;
+        }
+
+        table,
+        #display {
+            width: 95%;
+        }
+    }
+</style>
+
+
+<!-- <style>
+    table {
+        background-color: rgba(211, 211, 211, 0.565);
+        width: 1000px;
+        border-spacing: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 50px;
+    }
+
+    #presentButton {
+        background-color: rgb(25, 150, 25);
+        margin: 0px 10px 0px 20px;
+        border-radius: 10px;
+        color: white;
+    }
+
+    #absentButton {
+        background-color: red;
+        border-radius: 10px;
+        margin: 0px 10px 0px 20px;
+        color: white;
+    }
+
+    #currentDateTime {
+        display: inline;
+    }
+
+    #display {
+        height: 55px;
+        background-color: lightblue;
+        border-radius: 20px;
+    }
+
+    #absentNo {
+        text-align: center;
+    }
+
+    #absentStudents {
+
+        text-align: center;
+    }
+
+    #all {
+        text-align: end;
+        margin-right: 10px;
+    }
+
+    #bigRollNoDisplay {
+        text-align: center;
+        font-size: 39px;
+        font-weight: 600;
+
+    }
+</style> -->
+
+
+
+<body id="b">
+    <h1>Attendance Tracker</h1>
+
+    <div id="currentDateTime"></div>
+   
+    <div id="display">
+        <h2 id="bigRollNoDisplay">Press ArrowRight to display students</h2>
+    </div>
+    <div id="absentNo"></div>
+    <div id="absentStudents">RollNo Of Absent Students : </div>
+
+    <div id="all">
+        <button id="allpres" onclick="allpres()">All Present</button>
+        <button id="allabs" onclick="allabs()">All Absent</button>
+    </div>
+
+    <table id="tbl"></table>
+
+
+    </table>
+    <script>
+        students = [
+            { name: "Jiya Kyada", rollNo: 101, status: "Present" },
+            { name: "Shah Dhvani Hitesh", rollNo: 102, status: "Present" },
+            { name: "Saraya Mohit Haresh", rollNo: 103, status: "Present" },
+            { name: "Zalavadiya Heet Siddharth", rollNo: 104, status: "Present" },
+            { name: "Darshil Dobariya", rollNo: 105, status: "Present" },
+            { name: "Nafisa Gandhi", rollNo: 106, status: "Present" },
+            { name: "Vasani Yashvi Niteshbhai", rollNo: 107, status: "Present" },
+            { name: "Delvadiya Manavkumar Kirtibhai", rollNo: 108, status: "Present" },
+            { name: "Ashara Palak Gopalbhai", rollNo: 109, status: "Present" },
+            { name: "Lunagariya Greshi Kamleshbhai", rollNo: 110, status: "Present" },
+            { name: "Nanavati Shrushti Gargesh", rollNo: 111, status: "Present" },
+            { name: "Ranpara Jay Manishbhai", rollNo: 112, status: "Present" },
+            { name: "Disha Mehta", rollNo: 113, status: "Present" },
+            { name: "Thummar Niraj Bhaveshbhai", rollNo: 114, status: "Present" },
+            { name: "Kachhava Nakul Umeshbhai", rollNo: 115, status: "Present" },
+            { name: "Kanabar Urva Darshanbhai", rollNo: 116, status: "Present" },
+            { name: "Nakar Dhruvil Hitesh", rollNo: 117, status: "Present" },
+            { name: "Poshiya Priyanshi Ajaybhai", rollNo: 118, status: "Present" },
+            { name: "Baravalia Dharitri Manharbhai", rollNo: 119, status: "Present" },
+            { name: "Muchhara Kashish Hiteshbhai", rollNo: 120, status: "Present" },
+            { name: "Chauhan Aditya Sureshbhai", rollNo: 121, status: "Present" },
+            { name: "Harsora Sakshi Ajaybhai", rollNo: 122, status: "Present" },
+            { name: "Katrodiya Sahil Rajeshbhai", rollNo: 123, status: "Present" },
+            { name: "Trambadiya Parikshit Parimalbhai", rollNo: 124, status: "Present" },
+            { name: "Padariya Preya Parasbhai", rollNo: 125, status: "Present" },
+            { name: "Gambhava Krushiben Manojbhai", rollNo: 126, status: "Present" },
+            { name: "Jadeja Vishwrajsinh Krushnasinh", rollNo: 127, status: "Present" },
+            { name: "Patel Jiya Sandipbhai", rollNo: 128, status: "Present" },
+            { name: "Pipalava Smit Ashvinbhai", rollNo: 129, status: "Present" },
+            { name: "Gohil Harshrajsinh Jitendrasinh", rollNo: 130, status: "Present" },
+            { name: "Kathiriya Arshi Keshubhai", rollNo: 131, status: "Present" },
+            { name: "Undhad Vishwa Rajesh", rollNo: 132, status: "Present" },
+            { name: "Diya Raiyani", rollNo: 133, status: "Present" },
+            { name: "Chavda Maulik Vinodbhai", rollNo: 134, status: "Present" },
+            { name: "Chavda Priyanka Prabodhbhai", rollNo: 135, status: "Present" },
+            { name: "Chavda Virendrasinh Ashwinbhai", rollNo: 136, status: "Present" },
+            { name: "Galani Krunal Chetanbhai", rollNo: 137, status: "Present" },
+            { name: "Kavar Suchi Vasantbhai", rollNo: 138, status: "Present" },
+            { name: "Odedara Nilesh Parbat", rollNo: 139, status: "Present" },
+            { name: "Vasani Dishita Nikhilkumar", rollNo: 140, status: "Present" },
+            { name: "Vachhani Vaishvi Manojkumar", rollNo: 141, status: "Present" },
+            { name: "Bhadania Ronit Yatinbhai", rollNo: 142, status: "Present" },
+            { name: "Chauhan Jenil Virenbhai", rollNo: 143, status: "Present" },
+            { name: "Virpara Krisha Rajeshbhai", rollNo: 144, status: "Present" },
+            { name: "Chandra Darshit Hiteshbhai", rollNo: 145, status: "Present" },
+            { name: "Detroja Ruchit Arvindbhai", rollNo: 146, status: "Present" },
+            { name: "Kapuriya Hepin Pravinbhai", rollNo: 147, status: "Present" },
+            { name: "Gohel Smit Ashvinbhai", rollNo: 148, status: "Present" },
+            { name: "Patel Kirtan Amitbhai", rollNo: 149, status: "Present" },
+            { name: "Ginoya Deep Kantilal", rollNo: 150, status: "Present" },
+            { name: "Marvaniya Jainish Dharmendrabhai", rollNo: 151, status: "Present" },
+            { name: "Ajudiya Yash Nareshbhai", rollNo: 152, status: "Present" },
+            { name: "Manas Borisagar", rollNo: 153, status: "Present" },
+            { name: "Joshi Soham Kamleshbhai", rollNo: 154, status: "Present" },
+            { name: "Kakadiya Khilan Manishbhai", rollNo: 155, status: "Present" },
+            { name: "Sidhdhapura Dhaval Dharmeshbhai", rollNo: 156, status: "Present" },
+            { name: "Sitapara Aryan Sunilbhai", rollNo: 157, status: "Present" },
+            { name: "Bhatasana Nainshi Pareshbhai", rollNo: 158, status: "Present" },
+            { name: "Malvaniya Viraj Jatinbhai", rollNo: 159, status: "Present" },
+            { name: "Tanisha Pambhar", rollNo: 160, status: "Present" },
+            { name: "Padshala Kuldeep Rajendrakumar", rollNo: 161, status: "Present" },
+            { name: "Bhimani Vishva Manishbhai", rollNo: 162, status: "Present" },
+            { name: "Karan Anushka Pintubhai", rollNo: 163, status: "Present" },
+            { name: "Vyas Kavya Sachin", rollNo: 164, status: "Present" },
+            { name: "Kamani Purna Hareshbhai", rollNo: 165, status: "Present" },
+            { name: "Mori Nandita Renishkumar", rollNo: 166, status: "Present" },
+            { name: "Ratanghayra Pankti Himanshu", rollNo: 167, status: "Present" },
+            { name: "Rupala Nikhil Kashmeeraben", rollNo: 168, status: "Present" },
+            { name: "Jadeja Shivrajsinh Girirajsinh", rollNo: 169, status: "Present" },
+            { name: "Hirva Satani", rollNo: 170, status: "Present" },
+            { name: "Raiyani Jenil Sanjaybhai", rollNo: 171, status: "Present" },
+            { name: "Chandpa Prince Sureshbhai", rollNo: 172, status: "Present" },
+            { name: "Faldu Vrajesh Sanjaybhai", rollNo: 173, status: "Present" },
+            { name: "Khambholiya Manya Parasharbhai", rollNo: 174, status: "Present" },
+            { name: "Prajapati Kaivalya Samir", rollNo: 175, status: "Present" },
+            { name: "Moral Aadit Shaileshbhai", rollNo: 176, status: "Present" },
+            { name: "Shihora Vibhu Chetanbhai", rollNo: 177, status: "Present" },
+            { name: "Kanani Kruti Jayeshbhai", rollNo: 178, status: "Present" },
+            { name: "Karoliya Princekumar Sandipbhai", rollNo: 179, status: "Present" },
+            { name: "Khunt Rutvi Hiteshbhai", rollNo: 180, status: "Present" },
+            { name: "Charadva Abhishek Virenbhai", rollNo: 181, status: "Present" },
+            { name: "Dave Krisha Kalpeshbhai", rollNo: 182, status: "Present" },
+            { name: "Janvi Kalaria", rollNo: 183, status: "Present" },
+            { name: "Rajwani Rohan Malik", rollNo: 184, status: "Present" },
+            { name: "Rana Parthrajsinh Bhupatsinh", rollNo: 185, status: "Present" },
+            { name: "Solanki Ronak Arvindbhai", rollNo: 186, status: "Present" },
+            { name: "Panchal Vedantkumar Niravbhai", rollNo: 187, status: "Present" },
+            { name: "Ambasana Venisha Hitenbhai", rollNo: 188, status: "Present" },
+            { name: "Raichura Smeet Rohitkumar", rollNo: 189, status: "Present" },
+            { name: "Gambhava Mirali Sureshbhai", rollNo: 190, status: "Present" },
+            { name: "Dave Dhruv Viralkumar", rollNo: 191, status: "Present" },
+            { name: "Ghetiya Ritu Pankajbhai", rollNo: 192, status: "Present" },
+            { name: "Radhanpara Saumya Jatinbhai", rollNo: 193, status: "Present" },
+            { name: "Yadav Gaurav Kaushikbhai", rollNo: 194, status: "Present" },
+            { name: "Buddhadev Misri Sanjaybhai", rollNo: 195, status: "Present" },
+            { name: "Joshi Kairav Paren", rollNo: 196, status: "Present" },
+            { name: "Savaliya Dhruvi Bharatbhai", rollNo: 197, status: "Present" },
+            { name: "Radhanpura Jeel Nimish", rollNo: 198, status: "Present" },
+            { name: "Savaliya Priyanshi Sureshbhai", rollNo: 199, status: "Present" },
+            { name: "Zala Bhavyadeepsinh Pruthvirajsinh", rollNo: 200, status: "Present" }
+        ];
+
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long', year: 'numeric', month: 'long',
+                day: 'numeric', hour: '2-digit', minute: '2-digit'
+            };
+            document.getElementById("currentDateTime").innerText = now.toLocaleString('en-IN', options);
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+        function renderTable() {
+            document.getElementById("tbl").innerHTML = `
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    `;
+
+            for (let i = 0; i < students.length; i++) {
+                document.getElementById("tbl").innerHTML += `
+                <tr>
+                    <td>${students[i].rollNo}</td>
+                    <td>${students[i].name}</td>
+                    <td>${students[i].status}</td>
+                    <td>
+                        <button onclick="present(${i});"id="presentButton">Present</button>
+                        <button onclick="absent(${i});" id="absentButton">Absent</button>
+                    </td>            
+                </tr>`;
+            }
+        }
+
+        let absentStu = [];
+        let count = 0;
+
+        function present(i) {
+
+            if (students[i].status !== "Present") {
+                students[i].status = "Present"
+                absentStu = absentStu.filter(rn => rn !== students[i].rollNo);
+                count--;
+                updateAbsentDisplay();
+                renderTable();
+            }
+        }
+
+
+        function absent(i) {
+            if (students[i].status !== "Absent") {
+
+                students[i].status = "Absent"
+                absentStu.push(students[i].rollNo);
+
+                count++;
+                updateAbsentDisplay();
+                renderTable();
+
+            }
+        }
+
+
+        function allpres() {
+            count = 0;
+            absentStu = [];
+            for (let i = 0; i < students.length; i++) {
+
+                students[i].status = "Present"
+
+
+            }
+            updateAbsentDisplay();
+            renderTable();
+
+        }
+        function allabs() {
+
+            count = students.length;
+            absentStu = [];
+
+            for (let i = 0; i < students.length; i++) {
+
+                students[i].status = "Absent"
+                absentStu.push(students[i].rollNo);
+
+            }
+            updateAbsentDisplay();
+            renderTable();
+        }
+
+        // document.getElementById("allpres")
+
+        function updateAbsentDisplay() {
+            document.getElementById("absentNo").innerHTML = `Total Number Of Absent Students: ${count}`;
+            document.getElementById("absentStudents").innerHTML = "RollNo Of Absent Students: " + absentStu.join(", ");
+        }
+
+
+        let currentIndex = 0;
+
+        b.addEventListener("keydown", (e) => {
+
+
+            if (e.key === "ArrowRight") {
+                if (currentIndex < students.length) {
+
+                    document.getElementById("bigRollNoDisplay").innerText =
+                        `${students[currentIndex].rollNo} - ${students[currentIndex].name} (${students[currentIndex].status})`;
+                    currentIndex++;
+                }
+                else {
+                    document.getElementById("bigRollNoDisplay").innerText = "Out Of Range";
+
+                }
+            }
+
+            if (e.key === "ArrowLeft") {
+                if (currentIndex > 1) {         // index 0 karta niche no javi joie ena mate  
+                    currentIndex--;
+                    document.getElementById("bigRollNoDisplay").innerText =
+                        `${students[currentIndex].rollNo} - ${students[currentIndex].name} (${students[currentIndex].status})`;
+
+                } else {
+
+                    document.getElementById("bigRollNoDisplay").innerText =
+                        `${students[0].rollNo} - ${students[0].name} (${students[0].status})`;
+                    currentIndex = 1;
+                }
+
+            }
+
+            if (e.key === "Enter") {
+                if (currentIndex > 0 && currentIndex <= students.length) {
+                    const idx = currentIndex - 1;
+                    if (students[idx].status === "Absent") {
+                        present(idx);
+                    } else {
+                        absent(idx);
+                    }
+                    document.getElementById("bigRollNoDisplay").innerText =
+                        `${students[idx].rollNo} - ${students[idx].name} (${students[idx].status})`;
+                }
+                else {
+                    alert("Please press ArrowRight to display a student first.");
+                }
+            }
+        });
+
+        renderTable();
+
+
+    </script>
+</body>
+
+</html>

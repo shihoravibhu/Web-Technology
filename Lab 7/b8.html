@@ -1,0 +1,40 @@
+<!-- 8. Demonstrate how to create a class in Java Script. (B) -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dv">hey</div>
+
+    <script>
+
+        // Define a class
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            greet() {
+                return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+            }
+        }
+
+
+        // Create an instance of the class
+
+        const p1 = new Person("vibhu", 18);
+
+        // Display the greeting in the div
+
+
+        document.getElementById("dv").innerText = p1.greet();    </script>
+</body>
+
+</html>
