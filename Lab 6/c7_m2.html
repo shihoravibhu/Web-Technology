@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    
+    <input type="text" id="username">
+    <button onclick="addStudent()" id="editAddBtn">ADD</button>
+
+    <table border="1" cellspacing="0" cellpadding="15">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+            </thrad>
+        <tbody id="tablebody">
+
+        </tbody>
+    </table>
+
+    <script>
+
+        arr = [];
+        editIndex = -1;
+
+        function display() {
+            temp = " ";
+            for (i = 0; i < arr.length; i++) {
+                temp += `<tr>
+                <td>${i + 1}</td>
+                <td>${arr[i]}</td>
+                <td>
+                    <button onclick="editName(${i})" >EDIT</button>
+                    <button onclick="deleteStudent(${i})" >DELETE</button>
+                </td> 
+            </tr>`
+            }
+            document.getElementById("tablebody").innerHTML = temp;
+        }
+
+
+        function addStudent() {
+
+            uname = document.getElementById("username").value;
+            if (editIndex != -1) {      //  for existing edit
+                arr[editIndex] = uname;
+                editIndex = -1;
+                document.getElementById("editAddBtn").innerHTML = "ADD";
+            }
+            else {
+                if (uname == '') {      // for new add
+                    alert("Please enter username.");
+                }
+                else {
+                    arr.push(uname);
+                }
+            }
+            document.getElementById("username").value = " ";
+            display();
+        }
+
+
+        function deleteStudent(index) {
+            arr.splice(index, 1);
+            display();
+        }
+
+
+        function editName(index) {
+
+            editIndex = index;
+            document.getElementById("username").value = arr[index];
+            username.focus();
+            document.getElementById("editAddBtn").innerHTML = "EDIT";
+        }
+
+      
+    </script>
+</body>
+
+</html>

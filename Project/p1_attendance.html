@@ -7,8 +7,6 @@
     <title>Attendance Tracker</title>
 </head>
 
-
-
 <style>
     body {
         font-family: 'Segoe UI', sans-serif;
@@ -95,9 +93,10 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: all 0.4s ease-in;
     }
-    th{
-        background-color: black;
-        color: white;
+
+    th {
+        color: honeydew;
+        background-color: #000000;
     }
 
     /* table tr:hover{
@@ -110,19 +109,18 @@
         text-align: left;
     }
 
-    table tr:nth-child(even) {
-        background-color: #f8fafc;
+ 
+  
+    table tr {
+        background-color: rgba(208, 217, 230, 0.7);
+        border-bottom: 10px solid transparent;
     }
 
-    table tr:nth-child(odd) {
-        background-color: #e2e8f0;
-    }
-
-    table tr:first-child {
+    /* table tr:first-child {
         background-color: #2b6cb0;
         color: white;
         font-weight: bold;
-    }
+    } */
 
     #presentButton,
     #absentButton {
@@ -168,74 +166,93 @@
             width: 95%;
         }
     }
+
+    #themeToggle {
+        border-radius: 15px;
+        background-color: #000000;
+        color: white;
+    }
+
+    body.dark-theme {
+        background: linear-gradient(to bottom, #232526, #414345);
+        color: #f0f0f0;
+    }
+
+    body.dark-theme #display {
+        background-color: #c0d3ff;        
+    }
+
+    body.dark-theme #display #bigRollNoDisplay{
+        color: darkblue;       
+    }
+
+    body.dark-theme h1{
+        color: honeydew;
+    }
+
+    body.dark-theme table {
+        background-color: #2d3142;
+        color: #f0f0f0;
+    }
+
+    body.dark-theme th {
+        background-color: rgb(74, 74, 74);
+        color: rgb(235, 235, 235);
+    }
+
+    body.dark-theme tr {
+        background-color: rgba(0, 0, 0, 0.838);
+        color: rgb(235, 235, 235);
+    }
+
+    body.dark-theme #all button {
+        background-color: #4ecc6d;
+        color: #232526;
+    }
+
+    body.dark-theme #all button:hover {
+        background-color: #393e46;
+        color: #f0f0f0;
+    }
+
+    body.dark-theme #presentButton {
+        background-color: #4ecca3;
+        color: #232526;
+    }
+
+    body.dark-theme #presentButton:hover {
+        background-color: #393e46;
+        color: #f0f0f0;
+    }
+
+    body.dark-theme #absentButton {
+        background-color: #ff6363;
+        color: #232526;
+    }
+
+    body.dark-theme #absentButton:hover {
+        background-color: #393e46;
+        color: #f0f0f0;
+    }
+
+    body.dark-theme #absentNo{
+        color: honeydew;
+    }
+    body.dark-theme #absentStudents{
+        color: honeydew;
+    }
+    body.dark-theme #currentDateTime{
+        color: honeydew;
+    }
 </style>
-
-
-<!-- <style>
-    table {
-        background-color: rgba(211, 211, 211, 0.565);
-        width: 1000px;
-        border-spacing: 10px;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 50px;
-    }
-
-    #presentButton {
-        background-color: rgb(25, 150, 25);
-        margin: 0px 10px 0px 20px;
-        border-radius: 10px;
-        color: white;
-    }
-
-    #absentButton {
-        background-color: red;
-        border-radius: 10px;
-        margin: 0px 10px 0px 20px;
-        color: white;
-    }
-
-    #currentDateTime {
-        display: inline;
-    }
-
-    #display {
-        height: 55px;
-        background-color: lightblue;
-        border-radius: 20px;
-    }
-
-    #absentNo {
-        text-align: center;
-    }
-
-    #absentStudents {
-
-        text-align: center;
-    }
-
-    #all {
-        text-align: end;
-        margin-right: 10px;
-    }
-
-    #bigRollNoDisplay {
-        text-align: center;
-        font-size: 39px;
-        font-weight: 600;
-
-    }
-</style> -->
-
 
 
 <body id="b">
     <h1>Attendance Tracker</h1>
 
     <div id="currentDateTime"></div>
-   
+    <button id="themeToggle" style="display:block;margin:0 auto 20px auto;">Dark Mode</button>
+
     <div id="display">
         <h2 id="bigRollNoDisplay">Press ArrowRight to display students</h2>
     </div>
@@ -355,6 +372,8 @@
             { name: "Zala Bhavyadeepsinh Pruthvirajsinh", rollNo: 200, status: "Present" }
         ];
 
+
+
         function updateDateTime() {
             const now = new Date();
             const options = {
@@ -374,7 +393,7 @@
             <th>Status</th>
             <th>Action</th>
         </tr>
-    `;
+    `;   
 
             for (let i = 0; i < students.length; i++) {
                 document.getElementById("tbl").innerHTML += `
@@ -401,6 +420,7 @@
                 count--;
                 updateAbsentDisplay();
                 renderTable();
+                // speakRoll(i);
             }
         }
 
@@ -414,6 +434,7 @@
                 count++;
                 updateAbsentDisplay();
                 renderTable();
+                // speakRoll(i);
 
             }
         }
@@ -457,35 +478,29 @@
 
         let currentIndex = 0;
 
-        b.addEventListener("keydown", (e) => {
-
-
+        document.addEventListener("keydown", (e) => {
             if (e.key === "ArrowRight") {
                 if (currentIndex < students.length) {
-
                     document.getElementById("bigRollNoDisplay").innerText =
                         `${students[currentIndex].rollNo} - ${students[currentIndex].name} (${students[currentIndex].status})`;
                     currentIndex++;
-                }
-                else {
+                    // speakRoll(currentIndex - 1);
+                } else {
                     document.getElementById("bigRollNoDisplay").innerText = "Out Of Range";
-
                 }
             }
 
             if (e.key === "ArrowLeft") {
-                if (currentIndex > 1) {         // index 0 karta niche no javi joie ena mate  
+                if (currentIndex > 1) {
                     currentIndex--;
                     document.getElementById("bigRollNoDisplay").innerText =
-                        `${students[currentIndex].rollNo} - ${students[currentIndex].name} (${students[currentIndex].status})`;
-
+                        `${students[currentIndex - 1].rollNo} - ${students[currentIndex - 1].name} (${students[currentIndex - 1].status})`;
+                    // speakRoll(currentIndex - 1);
                 } else {
-
                     document.getElementById("bigRollNoDisplay").innerText =
                         `${students[0].rollNo} - ${students[0].name} (${students[0].status})`;
                     currentIndex = 1;
                 }
-
             }
 
             if (e.key === "Enter") {
@@ -498,12 +513,27 @@
                     }
                     document.getElementById("bigRollNoDisplay").innerText =
                         `${students[idx].rollNo} - ${students[idx].name} (${students[idx].status})`;
-                }
-                else {
+                } else {
                     alert("Please press ArrowRight to display a student first.");
                 }
             }
         });
+
+        // function speakRoll(i) {
+        //     const roll = students[i].rollNo % 100;
+        //     const msg = new SpeechSynthesisUtterance(roll.toString());
+        //     msg.rate = 2.4;
+        //     window.speechSynthesis.cancel();
+        //     window.speechSynthesis.speak(msg);
+        // }       
+
+        document.getElementById("themeToggle").addEventListener("click", function () {
+            document.body.classList.toggle("dark-theme");
+            this.textContent = document.body.classList.contains("dark-theme") ? "Light Mode" : " Dark Mode";
+        });
+
+        
+
 
         renderTable();
 

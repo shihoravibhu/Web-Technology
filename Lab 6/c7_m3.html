@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<style>
+    table {
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <h1>Product Menagement</h1>
+
+    <table cellspacing="0" cellpadding="15">
+        <tr>
+            <td>
+                Product Name :
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                Category :
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="productname">
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="text" id="category">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Price :
+            </td>
+
+            <td></td>
+            <td></td>
+            <td>
+                Image URL :
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="price">
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="text" id="imgurl">
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <button onclick="addProduct()" id="editAddBtn">ADD</button>
+
+    <div id="displayproducts">
+
+    </div>
+
+    <script>
+
+        arr = [];
+        editIndex = -1;
+
+        function display() {
+            temp = "";
+            for (i = 0; i < arr.length; i++) {
+
+
+                temp += `<div class="card" style="width: 18rem;">
+  <img src="${arr[i].imgurl}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${arr[i].pname}</h5>
+    <p class="card-text">${arr[i].price}</p>
+    <p class="card-text">${arr[i].category}</p>
+    <a href="#" class="btn btn-primary" onclick="editName(${i})">Edit</a>
+    <a href="#" class="btn btn-danger"onclick="deleteStudent(${i})">Delete</a>
+  </div>
+</div>`
+            }
+            document.getElementById("displayproducts").innerHTML = temp;
+        }
+
+
+        function addProduct() {
+
+            pname = document.getElementById("productname").value;
+            category = document.getElementById("category").value;
+            price = document.getElementById("price").value;
+            imgurl = document.getElementById("imgurl").value;
+
+            products = {
+                pname: pname,
+                category: category,
+                price: price,
+                imgurl: imgurl
+
+            }
+
+            if (editIndex != -1) {      //  for existing edit
+                arr[editIndex] = products;
+                editIndex = -1;
+                document.getElementById("editAddBtn").innerHTML = "ADD";
+            }
+            else {
+                if (pname == '' || category == '' || price == '' || imgurl == '') {      // for new add
+                    alert("Fill All input");
+                }
+                else {
+                    arr.push(products);
+                }
+            }
+            document.getElementById("productname").value = " ";
+            document.getElementById("category").value = " ";
+            document.getElementById("price").value = " ";
+            document.getElementById("imgurl").value = " ";
+            display();
+        }
+
+
+        function deleteStudent(index) {
+            arr.splice(index, 1);
+            display();
+        }
+
+
+        function editName(index) {
+
+            editIndex = index;
+
+            document.getElementById("productname").value = arr[index].pname;
+            document.getElementById("category").value = arr[index].category;
+            document.getElementById("price").value = arr[index].price;
+            document.getElementById("imgurl").value = arr[index].imgurl;
+            
+            document.getElementById("editAddBtn").innerHTML = "EDIT";
+        }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
