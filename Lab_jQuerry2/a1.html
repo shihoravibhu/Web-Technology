@@ -1,0 +1,140 @@
+<!-- CRUD -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+
+
+<body>
+
+
+    <table>
+        <tr>
+            <td>Enter RollNumber</td>
+            <td>:</td>
+            <td><input type="text" id="txtRollNo" /></td>
+        </tr>
+        <tr>
+            <td>Enter Name</td>
+            <td>:</td>
+            <td><input type="text" id="txtName" /></td>
+        </tr>
+        <tr>
+            <td>Enter Department</td>
+            <td>:</td>
+            <td><input type="text" id="txtDept" /></td>
+        </tr>
+        <tr>
+            <td>Enter Image Path</td>
+            <td>:</td>
+            <td><input type="text" id="txtImageUrl" /></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="button" id="saveStudent" value="Add Student" />
+            </td>
+        </tr>
+    </table>
+
+    <h1>List of students</h1>
+    <div id="dataDisplay">
+
+    </div>
+
+    <script>
+        stu = [];
+        let indexToEdit = -1;
+
+        $(document).ready(function () {
+
+            $("#saveStudent").click(function () {
+
+                let rollNo = $("#txtRollNo").val();
+                let name = $("#txtName").val();
+                let dept = $("#txtDept").val();
+                let imageUrl = $("#txtImageUrl").val();
+
+                let data = { rollNo, name, dept, imageUrl };
+
+                if (indexToEdit === -1) {
+
+                    stu.push(data);      // simply add student Mode
+                }
+                else {
+                    stu[indexToEdit] = data;                // Edit Mode
+                    indexToEdit = -1;
+                    $("#saveStudent").val("Add Strudent");
+                }
+
+                displayData();
+
+                // $("#txtRollNo").val("");
+                // $("#txtName").val("");
+                // $("#txtDept").val("");
+                // $("#txtImageUrl").val("");
+
+                // or
+
+                $("input[type='text']").val("");
+
+            });
+
+        });
+
+        function displayData() {
+            let formatedData = stu.map((s) => {
+                let temp = "<tr>";
+                temp += "<td>" + s.rollNo + "</td>";
+                temp += "<td>" + s.name + "</td>";
+                temp += "<td>" + s.dept + "</td>";
+                temp += "<td><img width='200px' src='" + s.imageUrl + "'/></td>";
+                temp += "<td><button onclick='deleteStudent(" + s.rollNo + ")'>Delete</button></td>"
+                temp += "<td><button onclick='editStudent(" + s.rollNo + ")'>Edit</button></td>"
+                temp += "</tr>";
+
+                return temp;
+            });
+
+            let finalData = "<table border='1' cellspacing='0' cellpadding='10'> " + formatedData.join("") + "</table>";
+
+            $("#dataDisplay").html(finalData);
+
+        }
+
+        function deleteStudent(rn) {
+            const indexToDelete = stu.findIndex((s) => {
+                return s.rollNo == rn
+            });
+            stu.splice(indexToDelete, 1)
+            displayData();
+        }
+
+        function editStudent(rn) {
+
+            indexToEdit = stu.findIndex((s) => {
+                return s.rollNo == rn
+            });
+
+            $("#txtRollNo").val(stu[indexToEdit].rollNo);
+            $("#txtName").val(stu[indexToEdit].name);
+            $("#txtDept").val(stu[indexToEdit].dept);
+            $("#txtImageUrl").val(stu[indexToEdit].imageUrl);
+
+            displayData();
+            $("#saveStudent").val("Edit Strudent");
+
+            // stu.splice(indexToEdit, 1);     // aa rite delete and replace karvathi sequence reti nathi so aa rit nai chale 
+        }
+    </script>
+
+</body>
+
+</html>

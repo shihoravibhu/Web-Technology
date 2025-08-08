@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B9</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <input type="text" class="inp">
+    <div></div>
+
+
+    <script>
+        $(document).ready(function () {
+
+
+            $("input").blur(function () {
+
+                let data = $("input").val().trim();
+
+                regexp = new RegExp(/^\d{2}[A-Za-z]{2,3}\d{4,5}$/);
+
+                if (regexp.test(data)) {
+                    $("div").text("Valid").css({ color: "green" });
+                    $("input").css({ borderColor: "green" })
+                }
+                else {
+                    $("div").text("Invalid").css({ color: "red" });
+                    $("input").css({ borderColor: "red" })
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

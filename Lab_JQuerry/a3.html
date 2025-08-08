@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A3</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h1 id="myEle">Hello</h1>
+    <button id="btn">Click</button>
+
+    <script>
+        $(document).ready(function (){
+
+            isvisible = true;
+            
+            $("#btn").click(function (){
+                
+                if(isvisible){
+                    
+                    $("#myEle").hide();
+                    isvisible = false;
+                }
+                else{
+                    $("#myEle").show();
+                    isvisible = true;
+
+                }
+
+                // or
+
+                // $("#myEle").toggle();
+            })
+        })
+
+    </script>
+</body>
+</html>
