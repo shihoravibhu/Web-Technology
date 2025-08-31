@@ -1,0 +1,103 @@
+ body {
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+            min-height: 100vh;
+        }
+
+        .inp{
+
+            width: 300px;
+            margin: auto;
+
+        }
+
+        .main {
+            width: 100vw;
+        }
+
+        img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.03);
+        }
+
+        .mid {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.07) translateY(-8px);
+            box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.25);
+        }
+
+        .card-title {
+            font-weight: 700;
+        }
+
+        .card .btn {
+            background: linear-gradient(90deg, #000 0%, #696868 100%);
+            color: #fff;
+            border: none;
+            border-radius: 2rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.12);
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+
+        .card .btn:hover {
+            background: linear-gradient(90deg, #696868 0%, #000 100%);
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(0, 123, 255, 0.18);
+        }
+
+        .rides h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0072ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .rides .subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .soft-divider {
+            width: 80%;
+            height: 2px;
+            margin: 2.5rem auto 2.5rem auto;
+            background: linear-gradient(90deg, #e0eafc 0%, #0072ff 50%, #e0eafc 100%);
+            opacity: 0.4;
+            border-radius: 1rem;
+        }
+
+        .right {
+            margin: 0 auto 2rem auto;
+            max-width: 900px;
+            padding: 0 1rem;
+        }
+
+        .responsive-map {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+            border: 2px solid #fff;
+            overflow: hidden;
+        }

@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srimad Bhagavad Gita - Sacred Wisdom for Modern Life</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #ff8c00;
+            --secondary-gold: #ffd700;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Navbar Enhancements */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-orange) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-orange) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-buttons {
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: #e67e00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.6);
+        }
+
+        .btn-outline-light {
+            border: 2px solid white;
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--text-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Verse of the Day */
+        .verse-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .verse-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .verse-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 120px;
+            color: rgba(255, 140, 0, 0.1);
+            font-family: serif;
+        }
+
+        .verse-heading {
+            color: var(--primary-orange);
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .verse-text {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .verse-translation {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .feature-desc {
+            color: var(--text-light);
+        }
+
+        /* Chapters Section */
+        .chapters-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f1f3f4 0%, #e8eaf0 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-orange);
+            border-radius: 2px;
+        }
+
+        .chapter-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: none;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--primary-orange), #ff6b35);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .chapter-number {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .chapter-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .chapter-body {
+            padding: 25px;
+        }
+
+        .chapter-summary {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .chapter-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background: var(--bg-gradient);
+            padding: 60px 0;
+            color: white;
+        }
+
+        .newsletter-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-control {
+            border-radius: 50px;
+            padding: 12px 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 0 0.2rem rgba(255, 140, 0, 0.25);
+        }
+
+        /* Search Section */
+        .search-section {
+            background: white;
+            padding: 60px 0;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 0 0.2rem rgba(255, 140, 0, 0.25);
+        }
+
+        .search-btn {
+            border-radius: 50px;
+            padding: 15px 30px;
+            margin-left: -50px;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Loading */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner-border {
+            color: var(--primary-orange);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .btn-outline-light {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            
+            .navbar-nav {
+                text-align: center;
+            }
+            
+            .verse-card {
+                padding: 25px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-dark: #f8f9fa;
+                --text-light: #adb5bd;
+                --bg-light: #212529;
+            }
+        }
+
+        /* Verse Display Modal */
+        .verse-modal .modal-content {
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .verse-modal .modal-header {
+            background: var(--bg-gradient);
+            color: white;
+            border-radius: 20px 20px 0 0;
+            border-bottom: none;
+        }
+
+        .verse-modal .modal-body {
+            padding: 30px;
+        }
+
+        .verse-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .verse-sanskrit {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .verse-translation {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Statistics */
+        .stats {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="bi bi-book me-2"></i>
+                Bhagavad Gita
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Chapters
+                        </a>
+                        <ul class="dropdown-menu" id="chaptersDropdown">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#verses">Verses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#search">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center ms-3">
+                    <button class="btn btn-outline-secondary me-2" id="themeToggle">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-translate"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="hi">हिन्दी</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="sa">संस्कृत</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Srimad Bhagavad Gita</h1>
+                <p class="subtitle">
+                    Discover eternal wisdom and spiritual guidance for modern life
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToChapters()">
+                        <i class="bi bi-book-open me-2"></i>
+                        Start Reading
+                    </button>
+                    <button class="btn btn-outline-light" onclick="scrollToSection('verse-of-day')">
+                        <i class="bi bi-star me-2"></i>
+                        Verse of the Day
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number">18</span>
+                        <span class="stat-label">Chapters</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number">700</span>
+                        <span class="stat-label">Verses</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number">5000+</span>
+                        <span class="stat-label">Years Old</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Wisdom</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verse of the Day -->
+    <section id="verse-of-day" class="verse-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="verse-card animate-on-scroll">
+                        <div class="verse-heading">
+                            <i class="bi bi-star-fill me-2"></i>
+                            Verse of the Day - BG <span id="dailyVerseRef">2.47</span>
+                        </div>
+                        <div class="verse-text" id="dailyVerseText">
+                            You have the right to perform your prescribed duty, but never to the fruits of that action. Never consider yourself the cause of the results of your activities, and never be attached to not doing your duty.
+                        </div>
+                        <div class="verse-translation" id="dailyVerseTranslation">
+                            This verse teaches us about performing our duties without attachment to results, which is the essence of Karma Yoga.
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-outline-primary" onclick="getRandomVerse()">
+                                <i class="bi bi-shuffle me-2"></i>
+                                Get Random Verse
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Explore the Gita</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="bi bi-book-open"></i>
+                        </div>
+                        <h4 class="feature-title">All 18 Chapters</h4>
+                        <p class="feature-desc">Complete text with Sanskrit verses, transliterations, and English translations.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <h4 class="feature-title">Advanced Search</h4>
+                        <p class="feature-desc">Find specific verses, concepts, or teachings across the entire scripture.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="bi bi-headphones"></i>
+                        </div>
+                        <h4 class="feature-title">Audio Recitation</h4>
+                        <p class="feature-desc">Listen to beautiful Sanskrit recitations and English narrations.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="bi bi-bookmark-heart"></i>
+                        </div>
+                        <h4 class="feature-title">Daily Wisdom</h4>
+                        <p class="feature-desc">Receive daily verses and spiritual insights to guide your journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section id="search" class="search-section">
+        <div class="container">
+            <h2 class="section-title">Search the Scriptures</h2>
+            <div class="search-box">
+                <div class="input-group">
+                    <input type="text" class="form-control search-input" id="searchInput" 
+                           placeholder="Search for verses, concepts, or teachings...">
+                    <button class="btn btn-primary search-btn" onclick="performSearch()">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="searchResults" class="mt-4"></div>
+        </div>
+    </section>
+
+    <!-- Chapters Section -->
+    <section id="chapters" class="chapters-section">
+        <div class="container">
+            <h2 class="section-title">The 18 Chapters</h2>
+            <div class="loading" id="chaptersLoading">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2">Loading chapters...</p>
+            </div>
+            <div class="row" id="chaptersContainer">
+                <!-- Chapters will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="newsletter-form text-center">
+                        <h3 class="mb-3">Daily Spiritual Inspiration</h3>
+                        <p class="mb-4">Receive a verse from the Bhagavad Gita each morning to start your day with wisdom and purpose.</p>
+                        <div class="row g-3">
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" placeholder="Your Name" id="subscribeName">
+                            </div>
+                            <div class="col-md-5">
+                                <input type="email" class="form-control" placeholder="Your Email" id="subscribeEmail">
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-primary w-100" onclick="subscribe()">
+                                    <i class="bi bi-envelope-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Bhagavad Gita</h5>
+                    <p>Bringing the timeless wisdom of the Bhagavad Gita to the modern world through technology and devotion.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 mb-4">
+                    <h6 class="mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="#chapters" class="text-light text-decoration-none">Chapters</a></li>
+                        <li><a href="#search" class="text-light text-decoration-none">Search</a></li>
+                        <li><a href="#about" class="text-light text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h6 class="mb-3">Resources</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Commentary</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Audio</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Downloads</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">API</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-5">
+                    <h6 class="mb-3">Contact</h6>
+                    <p class="small">For questions, suggestions, or technical support, please reach out to us.</p>
+                    <a href="mailto:contact@bhagavadgita.com" class="text-light text-decoration-none">
+                        <i class="bi bi-envelope me-2"></i>
+                        contact@bhagavadgita.com
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Bhagavad Gita. Made with <i class="bi bi-heart-fill text-danger"></i> for spiritual seekers worldwide.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Verse Modal -->
+    <div class="modal fade verse-modal" id="verseModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="verseModalTitle">
+                        <i class="bi bi-book-open me-2"></i>
+                        Bhagavad Gita Verse
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="verse-content">
+                        <div class="verse-sanskrit mb-3" id="modalVerseSanskrit">
+                            <!-- Sanskrit text -->
+                        </div>
+                        <div class="verse-transliteration mb-3" id="modalVerseTransliteration">
+                            <!-- Transliteration -->
+                        </div>
+                        <div class="verse-translation" id="modalVerseTranslation">
+                            <!-- English translation -->
+                        </div>
+                        <div class="verse-commentary mt-4" id="modalVerseCommentary">
+                            <!-- Commentary -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" onclick="shareVerse()">
+                        <i class="bi bi-share me-2"></i>Share
+                    </button>
+                    <button type="button" class="btn btn-outline-primary" onclick="bookmarkVerse()">
+                        <i class="bi bi-bookmark me-2"></i>Bookmark
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="playAudio()">
+                        <i class="bi bi-play-circle me-2"></i>Listen
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast for notifications -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="notificationToast" class="toast" role="alert">
+            <div class="toast-header">
+                <i class="bi bi-info-circle-fill me-2 text-primary"></i>
+                <strong class="me-auto">Notification</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastMessage">
+                <!-- Toast message -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Global variables
+        let gitaData = {
+            chapters: [],
+            currentVerse: null,
+            bookmarkedVerses: JSON.parse(localStorage.getItem('bookmarkedVerses') || '[]'),
+            currentLanguage: 'en'
+        };
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            setupEventListeners();
+            loadChapters();
+            loadDailyVerse();
+            setupScrollAnimations();
+        });
+
+        // Initialize application
+        function initializeApp() {
+            // Load theme preference
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Search input
+            document.getElementById('searchInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // Theme toggle
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Load chapters data
+        async function loadChapters() {
+            try {
+                showLoading('chaptersLoading', true);
+                
+                // Use the embedded chapter data from your original code
+                gitaData.chapters = [
+                    {
+                        id: 1,
+                        name: "अर्जुनविषादयोग",
+                        name_transliterated: "Arjun Viṣhād Yog",
+                        name_translated: "Arjuna Visada Yoga",
+                        verses_count: 47,
+                        chapter_number: 1,
+                        name_meaning: "Arjuna's Dilemma",
+                        chapter_summary: "The first chapter introduces the setup and circumstances that led to the epic battle of Mahabharata. As both armies stand ready, Arjuna becomes sad and depressed due to fear of losing relatives, leading to the revelation of Bhagavad Gita's wisdom."
+                    },
+                    {
+                        id: 2,
+                        name: "सांख्ययोग",
+                        name_transliterated: "Sānkhya Yog",
+                        name_translated: "Sankhya Yoga",
+                        verses_count: 72,
+                        chapter_number: 2,
+                        name_meaning: "Transcendental Knowledge",
+                        chapter_summary: "The most important chapter containing the essence of the entire Gita. Krishna explains the nature of Self, Karma Yoga, and describes the characteristics of a perfect person with steady mind."
+                    },
+                    {
+                        id: 3,
+                        name: "कर्मयोग",
+                        name_transliterated: "Karm Yog",
+                        name_translated: "Karma Yoga",
+                        verses_count: 43,
+                        chapter_number: 3,
+                        name_meaning: "Path of Selfless Service",
+                        chapter_summary: "Krishna emphasizes the importance of karma and describes actions that lead to bondage versus liberation. Those who perform duties without attachment attain liberation."
+                    },
+                    {
+                        id: 4,
+                        name: "ज्ञानकर्मसंन्यासयोग",
+                        name_transliterated: "Jñāna Karm Sanyās Yog",
+                        name_translated: "Jnana Karma Sanyasa Yoga",
+                        verses_count: 42,
+                        chapter_number: 4,
+                        name_meaning: "Path of Knowledge and Disciplines of Action",
+                        chapter_summary: "Krishna glorifies Karma Yoga and imparts transcendental knowledge. He reveals the reason behind his appearances to re-establish dharma and peace on Earth."
+                    },
+                    {
+                        id: 5,
+                        name: "कर्मसंन्यासयोग",
+                        name_transliterated: "Karm Sanyās Yog",
+                        name_translated: "Karma Sanyasa Yoga",
+                        verses_count: 29,
+                        chapter_number: 5,
+                        name_meaning: "Path of Renunciation",
+                        chapter_summary: "Krishna compares paths of renunciation and detached action, explaining both lead to the same goal. Performing duties without attachment leads to liberation."
+                    },
+                    {
+                        id: 6,
+                        name: "ध्यानयोग",
+                        name_transliterated: "Dhyān Yog",
+                        name_translated: "Dhyana Yoga",
+                        verses_count: 47,
+                        chapter_number: 6,
+                        name_meaning: "Path of Meditation",
+                        chapter_summary: "Krishna reveals the Yoga of Meditation, discussing obstacles in controlling the mind and exact methods to conquer it and unite with God."
+                    },
+                    {
+                        id: 7,
+                        name: "ज्ञानविज्ञानयोग",
+                        name_transliterated: "Jñāna Vijñāna Yog",
+                        name_translated: "Gyaan Vigyana Yoga",
+                        verses_count: 30,
+                        chapter_number: 7,
+                        name_meaning: "Self-Knowledge and Enlightenment",
+                        chapter_summary: "Krishna reveals himself as the Supreme Truth and sustaining force. He describes Maya, the four types who surrender to Him, and the Ultimate Reality."
+                    },
+                    {
+                        id: 8,
+                        name: "अक्षरब्रह्मयोग",
+                        name_transliterated: "Akṣhar Brahma Yog",
+                        name_translated: "Akshara Brahma Yoga",
+                        verses_count: 28,
+                        chapter_number: 8,
+                        name_meaning: "Path of the Eternal God",
+                        chapter_summary: "Krishna reveals the importance of the last thought before death. Constant remembrance and devotion leads to His supreme abode."
+                    },
+                    {
+                        id: 9,
+                        name: "राजविद्याराजगुह्ययोग",
+                        name_transliterated: "Rāja Vidyā Yog",
+                        name_translated: "Raja Vidya Yoga",
+                        verses_count: 34,
+                        chapter_number: 9,
+                        name_meaning: "Yoga through the King of Sciences",
+                        chapter_summary: "Krishna explains His supremacy and the role of Bhakti in spiritual awakening. True devotion leads to freedom from material bonds."
+                    },
+                    {
+                        id: 10,
+                        name: "विभूतियोग",
+                        name_transliterated: "Vibhūti Yog",
+                        name_translated: "Vibhooti Yoga",
+                        verses_count: 42,
+                        chapter_number: 10,
+                        name_meaning: "Appreciating the Infinite Opulences of God",
+                        chapter_summary: "Krishna reveals His divine manifestations and opulences to increase Arjuna's devotion. Arjuna recognizes Krishna's supreme position."
+                    },
+                    {
+                        id: 11,
+                        name: "विश्वरूपदर्शनयोग",
+                        name_transliterated: "Viśhwarūp Darśhan Yog",
+                        name_translated: "Vishwaroopa Darshana Yoga",
+                        verses_count: 55,
+                        chapter_number: 11,
+                        name_meaning: "Beholding the Cosmic Form of God",
+                        chapter_summary: "Arjuna requests to see Krishna's Universal Form. He is granted divine vision to behold the entirety of creation in Krishna's cosmic body."
+                    },
+                    {
+                        id: 12,
+                        name: "भक्तियोग",
+                        name_transliterated: "Bhakti Yog",
+                        name_translated: "Bhakti Yoga",
+                        verses_count: 20,
+                        chapter_number: 12,
+                        name_meaning: "The Yoga of Devotion",
+                        chapter_summary: "Krishna emphasizes the superiority of Bhakti Yoga over other disciplines and describes qualities of dear devotees."
+                    },
+                    {
+                        id: 13,
+                        name: "क्षेत्र-क्षेत्रज्ञविभागयोग",
+                        name_transliterated: "Kṣhetra Kṣhetrajña Vibhāg Yog",
+                        name_translated: "Ksetra Ksetrajna Vibhaaga Yoga",
+                        verses_count: 35,
+                        chapter_number: 13,
+                        name_meaning: "Distinguishing the Field and Knower of the Field",
+                        chapter_summary: "Krishna discriminates between the physical body (field) and immortal soul (knower). Understanding this difference leads to Brahman realization."
+                    },
+                    {
+                        id: 14,
+                        name: "गुणत्रयविभागयोग",
+                        name_transliterated: "Guṇa Traya Vibhāg Yog",
+                        name_translated: "Gunatraya Vibhaga Yoga",
+                        verses_count: 27,
+                        chapter_number: 14,
+                        name_meaning: "Understanding the Three Modes of Material Nature",
+                        chapter_summary: "Krishna reveals the three gunas (modes) of material nature and their characteristics. Pure devotion helps transcend these modes."
+                    },
+                    {
+                        id: 15,
+                        name: "पुरुषोत्तमयोग",
+                        name_transliterated: "Puruṣhottam Yog",
+                        name_translated: "Purushottama Yoga",
+                        verses_count: 20,
+                        chapter_number: 15,
+                        name_meaning: "The Yoga of the Supreme Divine Personality",
+                        chapter_summary: "Krishna reveals the purpose of transcendental knowledge - to understand Him as the Supreme Divine Personality and engage in devotional service."
+                    },
+                    {
+                        id: 16,
+                        name: "दैवासुरसम्पद्विभागयोग",
+                        name_transliterated: "Daivāsura Sampad Vibhāg Yog",
+                        name_translated: "Daivasura Sampad Vibhaga Yoga",
+                        verses_count: 24,
+                        chapter_number: 16,
+                        name_meaning: "Discerning the Divine and Demoniac Natures",
+                        chapter_summary: "Krishna describes divine and demoniac qualities. Divine qualities lead to liberation while demoniac qualities lead to bondage."
+                    },
+                    {
+                        id: 17,
+                        name: "श्रद्धात्रयविभागयोग",
+                        name_transliterated: "Śhraddhā Traya Vibhāg Yog",
+                        name_translated: "Sraddhatraya Vibhaga Yoga",
+                        verses_count: 28,
+                        chapter_number: 17,
+                        name_meaning: "Discerning the Three Divisions of Faith",
+                        chapter_summary: "Krishna describes three types of faith corresponding to the three modes. Faith in goodness leads to purification of heart."
+                    },
+                    {
+                        id: 18,
+                        name: "मोक्षसंन्यासयोग",
+                        name_transliterated: "Mokṣha Sanyās Yog",
+                        name_translated: "Moksha Sanyaas Yoga",
+                        verses_count: 78,
+                        chapter_number: 18,
+                        name_meaning: "Perfection of Renunciation and Surrender",
+                        chapter_summary: "The final chapter explaining renunciation types and the highest path of pure devotional service to Krishna as the Supreme goal."
+                    }
+                ];
+
+                renderChapters();
+                populateChaptersDropdown();
+                showLoading('chaptersLoading', false);
+                
+            } catch (error) {
+                console.error('Error loading chapters:', error);
+                showToast('Error loading chapters. Please try again later.', 'error');
+                showLoading('chaptersLoading', false);
+            }
+        }
+
+        // Render chapters
+        function renderChapters() {
+            const container = document.getElementById('chaptersContainer');
+            container.innerHTML = gitaData.chapters.map(chapter => `
+                <div class="col-lg-6 col-xl-4 mb-4 animate-on-scroll">
+                    <div class="chapter-card" onclick="openChapter(${chapter.chapter_number})">
+                        <div class="chapter-header">
+                            <div class="chapter-number">Chapter ${chapter.chapter_number}</div>
+                            <div class="chapter-title">${chapter.name_transliterated}</div>
+                        </div>
+                        <div class="chapter-body">
+                            <h6 class="mb-2" style="color: var(--primary-orange);">${chapter.name_meaning}</h6>
+                            <p class="chapter-summary">${chapter.chapter_summary}</p>
+                            <div class="chapter-meta">
+                                <span><i class="bi bi-list-ul me-1"></i>${chapter.verses_count} verses</span>
+                                <span><i class="bi bi-clock me-1"></i>~${Math.ceil(chapter.verses_count * 0.5)} min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Populate chapters dropdown
+        function populateChaptersDropdown() {
+            const dropdown = document.getElementById('chaptersDropdown');
+            dropdown.innerHTML = gitaData.chapters.map(chapter => `
+                <li><a class="dropdown-item" href="#" onclick="openChapter(${chapter.chapter_number})">
+                    <i class="bi bi-file-earmark-text me-2" style="color: var(--primary-orange);"></i>
+                    Chapter ${chapter.chapter_number}: ${chapter.name_transliterated}
+                </a></li>
+            `).join('');
+        }
+
+        // Open chapter
+        function openChapter(chapterNumber) {
+            showToast(`Opening Chapter ${chapterNumber}: ${gitaData.chapters[chapterNumber-1].name_transliterated}`, 'info');
+            // Here you would typically navigate to a detailed chapter view
+            // For now, we'll just show a notification
+        }
+
+        // Load daily verse
+        function loadDailyVerse() {
+            // For demo purposes, we'll use a static verse
+            // In a real application, you'd fetch this from an API
+            const dailyVerses = [
+                {
+                    reference: "2.47",
+                    text: "You have the right to perform your prescribed duty, but never to the fruits of that action. Never consider yourself the cause of the results of your activities, and never be attached to not doing your duty.",
+                    translation: "This verse teaches us about performing our duties without attachment to results, which is the essence of Karma Yoga."
+                },
+                {
+                    reference: "2.20",
+                    text: "For the soul there is neither birth nor death. It is not slain when the body is slain.",
+                    translation: "This profound verse explains the eternal nature of the soul, which is beyond physical birth and death."
+                },
+                {
+                    reference: "4.7",
+                    text: "Whenever there is decline in religious practice and rise of irreligion, at that time I manifest myself.",
+                    translation: "Krishna explains His divine appearances to restore dharma and spiritual order in the world."
+                }
+            ];
+
+            const today = new Date();
+            const verseIndex = today.getDate() % dailyVerses.length;
+            const verse = dailyVerses[verseIndex];
+
+            document.getElementById('dailyVerseRef').textContent = verse.reference;
+            document.getElementById('dailyVerseText').textContent = verse.text;
+            document.getElementById('dailyVerseTranslation').textContent = verse.translation;
+        }
+
+        // Get random verse
+        function getRandomVerse() {
+            const verses = [
+                {
+                    reference: "18.66",
+                    text: "Abandon all varieties of religion and just surrender unto Me. I shall deliver you from all sinful reactions. Do not fear.",
+                    translation: "The ultimate instruction of the Bhagavad Gita - complete surrender to the Divine."
+                },
+                {
+                    reference: "6.35",
+                    text: "The mind is restless, turbulent, obstinate and very strong. To subdue it is more difficult than controlling the wind.",
+                    translation: "Arjuna describes the difficulty of controlling the mind, a challenge every spiritual seeker faces."
+                },
+                {
+                    reference: "7.14",
+                    text: "This divine energy of Mine is difficult to overcome. But those who have surrendered unto Me can easily cross beyond it.",
+                    translation: "Krishna explains how surrender to the Divine helps overcome the illusions of material nature."
+                }
+            ];
+
+            const randomVerse = verses[Math.floor(Math.random() * verses.length)];
+            
+            document.getElementById('dailyVerseRef').textContent = randomVerse.reference;
+            document.getElementById('dailyVerseText').textContent = randomVerse.text;
+            document.getElementById('dailyVerseTranslation').textContent = randomVerse.translation;
+
+            // Add animation effect
+            const verseCard = document.querySelector('.verse-card');
+            verseCard.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                verseCard.style.transform = 'scale(1)';
+            }, 150);
+        }
+
+        // Perform search
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (!query) {
+                showToast('Please enter a search term', 'warning');
+                return;
+            }
+
+            const resultsContainer = document.getElementById('searchResults');
+            
+            // Show loading
+            resultsContainer.innerHTML = `
+                <div class="text-center p-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Searching...</span>
+                    </div>
+                    <p class="mt-2">Searching the scriptures...</p>
+                </div>
+            `;
+
+            // Simulate search (in real app, this would be an API call)
+            setTimeout(() => {
+                const mockResults = [
+                    {
+                        chapter: 2,
+                        verse: 47,
+                        text: "You have the right to perform your prescribed duty, but never to the fruits of that action...",
+                        relevance: "karma, duty, action"
+                    },
+                    {
+                        chapter: 4,
+                        verse: 7,
+                        text: "Whenever there is decline in religious practice and rise of irreligion...",
+                        relevance: "dharma, divine intervention"
+                    }
+                ];
+
+                if (mockResults.length > 0) {
+                    resultsContainer.innerHTML = `
+                        <h5 class="mb-3">Search Results for "${query}"</h5>
+                        <div class="row">
+                            ${mockResults.map(result => `
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-primary">
+                                                Chapter ${result.chapter}, Verse ${result.verse}
+                                            </h6>
+                                            <p class="card-text">${result.text}</p>
+                                            <small class="text-muted">
+                                                <i class="bi bi-tags me-1"></i>${result.relevance}
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                } else {
+                    resultsContainer.innerHTML = `
+                        <div class="text-center p-4">
+                            <i class="bi bi-search display-4 text-muted"></i>
+                            <h5 class="mt-3">No results found</h5>
+                            <p class="text-muted">Try searching with different keywords.</p>
+                        </div>
+                    `;
+                }
+            }, 1500);
+        }
+
+        // Subscribe to newsletter
+        function subscribe() {
+            const name = document.getElementById('subscribeName').value.trim();
+            const email = document.getElementById('subscribeEmail').value.trim();
+
+            if (!name || !email) {
+                showToast('Please fill in both name and email fields', 'warning');
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                showToast('Please enter a valid email address', 'warning');
+                return;
+            }
+
+            // Simulate subscription
+            showToast('Thank you for subscribing! You will receive daily wisdom from the Bhagavad Gita.', 'success');
+            
+            // Clear form
+            document.getElementById('subscribeName').value = '';
+            document.getElementById('subscribeEmail').value = '';
+        }
+
+        // Utility functions
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function showLoading(elementId, show) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.style.display = show ? 'block' : 'none';
+            }
+        }
+
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('notificationToast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastIcon = toast.querySelector('.toast-header i');
+            
+            toastMessage.textContent = message;
+            
+            // Update icon and color based on type
+            toastIcon.className = `bi me-2 ${getToastIcon(type)}`;
+            
+            const bsToast = new bootstrap.Toast(toast);
+            bsToast.show();
+        }
+
+        function getToastIcon(type) {
+            const icons = {
+                info: 'bi-info-circle-fill text-primary',
+                success: 'bi-check-circle-fill text-success',
+                warning: 'bi-exclamation-triangle-fill text-warning',
+                error: 'bi-x-circle-fill text-danger'
+            };
+            return icons[type] || icons.info;
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = document.querySelector('#themeToggle i');
+            icon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+        }
+
+        function scrollToChapters() {
+            document.getElementById('chapters').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Scroll animations
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Modal functions (for future implementation)
+        function shareVerse() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Bhagavad Gita Verse',
+                    text: document.getElementById('modalVerseTranslation').textContent,
+                    url: window.location.href
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const text = document.getElementById('modalVerseTranslation').textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast('Verse copied to clipboard!', 'success');
+                });
+            }
+        }
+
+        function bookmarkVerse() {
+            // Implementation for bookmarking verses
+            showToast('Verse bookmarked!', 'success');
+        }
+
+        function playAudio() {
+            // Implementation for audio playback
+            showToast('Audio feature coming soon!', 'info');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case '/':
+                        e.preventDefault();
+                        document.getElementById('searchInput').focus();
+                        break;
+                    case 'r':
+                        e.preventDefault();
+                        getRandomVerse();
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

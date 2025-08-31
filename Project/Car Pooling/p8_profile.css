@@ -1,0 +1,65 @@
+ body {
+            background-color: #f9f9f9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .sidebar {
+            background-color: #000;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+        }
+        .sidebar h4 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: #bbb;
+            padding: 10px 0;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .sidebar a:hover,
+        .sidebar a.active {
+            color: #fff;
+            background-color: #1f1f1f;
+            border-radius: 6px;
+            padding-left: 10px;
+        }
+        .profile-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ddd;
+        }
+        .section-title {
+            margin-top: 25px;
+            font-weight: 600;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+        }
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+        .btn-uber {
+            background-color: #000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn-uber:hover {
+            background-color: #333;
+            color: #ddd;
+        }

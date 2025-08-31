@@ -9,295 +9,75 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <style>
-        .main {
-            width: 100vw;
-        }
-
-        .nav {
-            height: 60px;
-            background-color: black;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 30px;
-            position: sticky;
-            top: 0px;
-            z-index: 1;
-        }
-
-        .left-nav {
-            width: 55%;
-            display: flex;
-            justify-content: center;
-
-        }
-
-        .left-nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px 15px;
-            margin-right: 30px;
-            font-weight: 600;
-            transition: all 0.6s ease;
-            padding: 7px;
-        }
-
-
-        .left-nav a:hover {
-            /* color: rgba(255, 255, 255, 0.6); */
-            background-color: #484848b2;
-            border-radius: 20px;
-
-        }
-
-        .left-nav a:nth-child(2) {
-            background-color: #4848489b;
-            border-radius: 20px;
-            color: lightyellow;
-
-        }
-
-        .logo {
-            color: white;
-            text-decoration: none;
-            width: 1.5%;
-            font-weight: 700;
-            /* display: flex;
-            justify-content: start;    */
-            text-align: start;
-            margin: 10px;
-            font-size: large;
-        }
-
-        .right-nav .profile {
-            /* width: 26.5%; */
-            display: inline-block;
-            /* display: flex; */
-            /* justify-content: end; */
-            text-align: end;
-            margin: 10px;
-
-            scale: 1.9;
-        }
-
-        .right-nav a {
-            text-decoration: none;
-            color: white;
-            transition: all 0.6s ease;
-            margin-right: 10px;
-            padding: 10px;
-        }
-
-        .right-nav a:hover {
-            background-color: #484848b2;
-            border-radius: 20px;
-
-        }
-
-        .profile {
-            display: inline-block;
-            margin-right: 30px;
-            margin-bottom: 5px;
-            cursor: pointer;
-        }
-
-        .drive {
-            height: 60px;
-            background-color: #ffffff;
-        }
-
-        .left-drive {
-            width: 10%;
-            color: black;
-            display: inline-block;
-            margin-top: 4px;
-            font-weight: 600;
-            font-size: 29px;
-            margin-left: 40px;
-        }
-
-        .right-drive {
-            width: 80%;
-            display: inline-block;
-            text-align: right;
-        }
-
-        .right-drive a {
-            color: rgba(0, 0, 0, 0.39);
-            margin: 20px;
-            text-decoration: none;
-            transition: color 0.3s ease-in;
-        }
-
-        .right-drive a:hover {
-            color: black;
-        }
-
-        .ride-details {
-            margin-top: 30px;
-            border: 1px solid lightgray;
-            border-radius: 13px;
-        }
-
-        .mid {
-            width: 100%;
-            display: flex;
-            /* display: block; */
-            justify-content: center;
-            background-color: black;
-        }
-
-        .left {
-            width: 30%;
-            /* display: inline-block; */
-            /* display: flex; */
-            /* align-items: center; */
-            margin-top: 200px;
-
-        }
-
-        .right {
-            margin-top: 40px;
-            width: 40%;
-            margin-left: 20px;
-            /* display: inline-block; */
-            text-align: left;
-            /* display: flex; */
-            /* justify-content: end; */
-            display: flex;
-            justify-content: end;
-            margin-bottom: 10px;
-        }
-
-        .right img {
-            /* display: inline-block; */
-            border-radius: 15px;
-            width: 500px;
-            height: 700px;
-
-        }
-
-        h1 {
-            font-weight: 700;
-            color: #ffffff;
-            font-size: 49px;
-            word-spacing: 2px;
-            line-height: 70px;
-        }
-
-        p {
-            line-height: 46px;
-            color: #ffffff;
-        }
-
-        .left button {
-            background-color: black;
-        }
-
-        .input-group-text {
-            border-radius: 0.75rem;
-        }
-
-        .form-control,
-        .form-select {
-            border-radius: 0.75rem;
-        }
-
-         /* Footers */
-        .footer {
-            background-color: #000;
-            border-top: 1px solid #222;
-            padding: 40px 60px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .footer-content {
-            flex: 1 1 200px;
-            margin: 30px 0px;
-        }
-
-        .footer-content h4 {
-            margin-bottom: 14px;
-            color: #fff;
-        }
-
-        .footer-content a {
-            display: block;
-            margin: 8px 0;
-            color: #aaa;
-            text-decoration: none;
-        }
-
-        .footer-bottom {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 60px;
-            background-color: #000;
-        }
-
-        .social-icons img,
-        .store-buttons img {
-            height: 30px;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-
-        .bottom-bar {
-            background: #000;
-            text-align: center;
-            padding: 10px;
-            font-size: 13px;
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="p3_drive.css
+    ">
 </head>
 
 <body>
     <div class="main">
-        <div class="nav">
-            <a href="p1_home_carPooling.html" class="logo">RideLoop</a>
-            <div class="left-nav">
-                <a href="p2_ride_carPooling.html">Ride</a>
-                <a href="p3_drive_carPooling.html">Drive</a>
-                <a href="p4_business_carPooling.html">Business</a>
-                <a href="p5_aboutUs_carPooling.html">About</a>
-            </div>
-            <div class="right-nav">
-                <a href="">Help</a>
-
-                <a href="p8_PofilePage_carPooling.html">
-                    <div class="profile"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                        <path fill-rule="evenodd"
-                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                    </svg></div>
-                </a>
-
-            </div>
+                <!-- Bootstrap 5 Responsive Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand fw-bold" href="p1_home_carPooling.html">RideLoop</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="p2_ride_carPooling.html">Ride</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="p3_drive_carPooling.html">Drive</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="p4_business_carPooling.html">Business</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="p5_aboutUs_carPooling.html">About</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" href="#">Help</a>
+                                </li> -->
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" href="p8_PofilePage_carPooling.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-circle me-1" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                        </svg>
+                                        Profile
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+  
+<div class="container my-4">
+    <div class="row align-items-center">
+        <!-- Left side -->
+        <div class="col-12 col-md-2 mb-3 mb-md-0 text-center text-md-start">
+            <h5 class="fw-bold m-0">Drive</h5>
         </div>
 
-        <div class="drive">
-            <div class="left-drive">
-                Drive
-            </div>
-            <div class="right-drive">
-                <a href="">Overview</a>
-                <a href="">Requirement</a>
-                <a href="">Driving basics</a>
-                <a href="">Earning</a>
-                <a href="">Deactivations</a>
-                <a href="">Safety</a>
-                <a href="">RideLoop Pro</a>
-                <a href="">Contact us</a>
+        <!-- Right side -->
+        <div class="col-12 col-md-10">
+            <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
+                <a href="#" class="text-decoration-none text-dark">Overview</a>
+                <a href="#" class="text-decoration-none text-dark">Requirement</a>
+                <a href="#" class="text-decoration-none text-dark">Driving basics</a>
+                <a href="#" class="text-decoration-none text-dark">Earning</a>
+                <a href="#" class="text-decoration-none text-dark">Deactivations</a>
+                <a href="#" class="text-decoration-none text-dark">Safety</a>
+                <a href="#" class="text-decoration-none text-dark">RideLoop Pro</a>
+                <a href="#" class="text-decoration-none text-dark">Contact us</a>
             </div>
         </div>
+    </div>
+</div>
+
 
         <div class="mid">
             <div class="left">
@@ -307,7 +87,7 @@
                 <p>Earn on your own schedule.</p>
 
                 <!-- Get Started button -->
-                <button type="button" class="btn btn-outline-light">Get Started</button>
+                <a href="p10_offerRide_carPooling.html" class="btn btn-outline-light" >Get Started</a>
 
             </div>
             <div class="right">
@@ -315,7 +95,60 @@
             </div>
         </div>
 
-         <!-- Footers -->
+        <div class="row2">
+            <h2>What fits your company's needs?</h2>
+
+            <div class="cards">
+
+                <div class="card" style="width: 18rem; display: inline-block;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                        <path
+                            d="M24.9609 28.37H10.1435C9.17874 28.37 8.39462 27.5818 8.39462 26.612V9.38405C8.39462 8.41428 9.17874 7.6261 10.1435 7.6261H24.9609C25.9257 7.6261 26.7098 8.41428 26.7098 9.38405V26.6159C26.7098 27.5856 25.9257 28.37 24.9609 28.37Z"
+                            fill="white" />
+                        <path
+                            d="M23.0621 35H12.0461C11.4849 35 11.0083 34.5827 10.9315 34.0264L9.91287 26.7125V9.2875L10.9315 1.97364C11.0083 1.41727 11.4849 1 12.0461 1H23.0621C23.6233 1 24.0999 1.41727 24.1768 1.97364L25.1954 9.2875V26.7086L24.1768 34.0264C24.0961 34.5827 23.6233 35 23.0621 35Z"
+                            fill="#276EF1" />
+                        <path
+                            d="M29.5541 20.125H27.9359C27.6899 20.125 27.4901 19.9241 27.4901 19.6768V16.3232C27.4901 16.0759 27.6899 15.875 27.9359 15.875H29.5541C29.8001 15.875 30 16.0759 30 16.3232V19.6768C30 19.9241 29.8001 20.125 29.5541 20.125Z"
+                            fill="white" />
+                        <path
+                            d="M28.9122 20.1251C27.9206 25.5226 23.212 29.6142 17.5503 29.6142C11.1736 29.6142 6 24.4137 6 18.0001C6 11.5864 11.1736 6.38599 17.5541 6.38599C23.212 6.38599 27.9206 10.4737 28.9161 15.8751L28.9122 20.1251Z"
+                            fill="white" />
+                        <path d="M24.4267 17.2273H17.5541V18.7727H24.4267V17.2273Z" fill="black" />
+                        <path
+                            d="M22.4318 19.3059C23.1493 19.3059 23.7309 18.7212 23.7309 18C23.7309 17.2788 23.1493 16.6941 22.4318 16.6941C21.7143 16.6941 21.1326 17.2788 21.1326 18C21.1326 18.7212 21.7143 19.3059 22.4318 19.3059Z"
+                            fill="black" />
+                        <path
+                            d="M14.9404 21.7207L13.8527 20.6273L16.7854 17.6793V11.0957H18.3229V18.3207L14.9404 21.7207Z"
+                            fill="#A0BFF8" />
+                    </svg>
+                    <div class="card-body">
+                        <h4 class="card-text text-light">Work when you want</h3>
+                            <p class="card-text text-light">Early mornings, late nights, or just weekends—drive when
+                                life allows, not when a boss demands.</p>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem; display: inline-block;">
+                    <i class="bi bi-headset" style="color: #aaa;"></i>
+                    <div class="card-body">
+                        <h4 class="card-text text-light">Get help that moves with you</h4>
+                        <p class="card-text text-light">Whether you're between rides or just starting for the day,
+                            support is always a few taps away.</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem; display: inline-block;">
+                    <i class="bi bi-currency-rupee" style="color: #aaa;"></i>
+                    <div class="card-body">
+                        <h4 class="card-text text-light">Drive more, earn more rewards</h4>
+                        <p class="card-text text-light">Get exclusive perks through our driver rewards program, Uber
+                            Pro—because your hard work should be recognized.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footers -->
 
         <div class="footer">
 

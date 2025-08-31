@@ -1,0 +1,212 @@
+ *{
+            animation: op 0.6s ease-in-out ;
+        }
+
+        @keyframes op{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                
+                opacity: 1;
+            }
+        }
+        
+        .main {
+            width: 100vw;
+        }
+
+        /* for mid */
+        .mid {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .left {
+            flex: 1 1 350px;
+            max-width: 500px;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+        .right {
+            flex: 1 1 350px;
+            max-width: 600px;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .right img {
+            width: 100%;
+            max-width: 560px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 15px;
+            display: block;
+        }
+
+        h1 {
+            font-weight: 700;
+            color: rgba(0, 0, 139, 0.67);
+            font-size: 49px;
+            word-spacing: 2px;
+            line-height: 70px;
+        }
+
+        p {
+            line-height: 35px;
+        }
+
+        .left button {
+            background-color: black;
+        }
+
+        /* for Cards Details */
+
+        .trip-section {
+            padding: 50px 0;
+        }
+
+        .trip-section h2 {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            border: none;
+            /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18); */
+            backdrop-filter: blur(100px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            /* box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.25); */
+            transform: scale(1.1);
+        }
+
+        .card img {
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .card-text {
+            font-size: 15px;
+            color: #333;
+        }
+
+        .btn-custom {
+            background-color: #000;
+            color: #fff;
+            padding: 0.9rem 1.6rem;
+            font-weight: 500;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #000;
+        }
+
+        /* Footers */
+        .footer {
+            background-color: #000;
+            border-top: 1px solid #222;
+            padding: 40px 60px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-content {
+            flex: 1 1 200px;
+            margin: 30px 0px;
+        }
+
+        .footer-content h4 {
+            margin-bottom: 14px;
+            color: #fff;
+        }
+
+        .footer-content a {
+            display: block;
+            margin: 8px 0;
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: #000;
+        }
+
+        .social-icons img,
+        .store-buttons img {
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .bottom-bar {
+            background: #000;
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 992px) {
+            .mid {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .left, .right {
+                width: 100%;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .right img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .mid {
+                padding: 0 0.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            .trip-section {
+                padding: 20px 0;
+            }
+        }

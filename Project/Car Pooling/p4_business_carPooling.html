@@ -9,281 +9,55 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <style>
-        .main {
-            width: 100vw;
-        }
+   <link rel="stylesheet" href="p4_bussiness.css">
 
-        .nav {
-            height: 60px;
-            background-color: black;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 30px;
-            position: sticky;
-            top: 0px;
-            z-index: 1;
-        }
-
-        .left-nav {
-            width: 55%;
-            display: flex;
-            justify-content: center;
-
-        }
-
-        .left-nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px 15px;
-            margin-right: 30px;
-            font-weight: 600;
-            transition: all 0.6s ease;
-            padding: 7px;
-        }
-
-
-        .left-nav a:hover {
-            /* color: rgba(255, 255, 255, 0.6); */
-            background-color: #484848b2;
-            border-radius: 20px;
-
-        }
-
-        .left-nav a:nth-child(3) {
-            background-color: #4848489b;
-            border-radius: 20px;
-            color: lightyellow;
-
-        }
-
-        .logo {
-            color: white;
-            text-decoration: none;
-            width: 1.5%;
-            font-weight: 700;
-            /* display: flex;
-            justify-content: start;    */
-            text-align: start;
-            margin: 10px;
-            font-size: large;
-        }
-
-        .right-nav .profile {
-            /* width: 26.5%; */
-            display: inline-block;
-            /* display: flex; */
-            /* justify-content: end; */
-            text-align: end;
-            margin: 10px;
-            scale: 1.9;
-        }
-
-        .right-nav a {
-            text-decoration: none;
-            color: white;
-            transition: all 0.6s ease;
-            margin-right: 10px;
-            padding: 10px;
-        }
-
-        .right-nav a:hover {
-            background-color: #484848b2;
-            border-radius: 20px;
-
-        }
-
-        .profile {
-            display: inline-block;
-            margin-right: 30px;
-            margin-bottom: 5px;
-            cursor: pointer;
-        }
-
-        .mid {
-            width: 100%;
-            display: flex;
-            /* display: block; */
-            justify-content: center;
-            background-color: black;
-            padding-bottom: 50px;
-        }
-
-        .left {
-            width: 30%;
-            /* display: inline-block; */
-            /* display: flex; */
-            /* align-items: center; */
-            margin-top: 40px;
-
-        }
-
-        .right {
-            margin-top: 40px;
-            width: 50%;
-            /* margin-left: 20px; */
-            /* display: inline-block; */
-            text-align: left;
-            /* display: flex; */
-            /* justify-content: end; */
-            display: flex;
-            justify-content: end;
-            margin-bottom: 10px;
-        }
-
-        .right img {
-            /* display: inline-block; */
-            border-radius: 15px;
-            width: 500px;
-            height: 400px;
-        }
-
-        h1 {
-            font-weight: 700;
-            color: #ffffff;
-            font-size: 49px;
-            word-spacing: 2px;
-            line-height: 70px;
-        }
-
-        p {
-            line-height: 46px;
-            color: #ffffff;
-        }
-
-        .left button {
-            background-color: black;
-        }
-
-        .input-group-text {
-            border-radius: 0.75rem;
-        }
-
-        .form-control,
-        .form-select {
-            border-radius: 0.75rem;
-        }
-
-        .row2 {
-            background-color: black;
-            color: #ffffff;
-            width: 100%;
-            /* display: flex;
-            justify-content: center; */
-            display: block;  
-            padding-top: 40px;          
-        }
-
-        .row2 h2 {
-            color: #ffffff;
-            word-spacing: 2px;
-            line-height: 70px;
-            display: block;
-            margin-left: 100px;
-            margin-bottom: 40px;
-        }
-
-        .cards{
-            display: flex;
-            justify-content: space-evenly;
-        }
-        
-        .card{
-            background-color: black;
-
-        }
-
-        .card img{
-            width: 300px;
-            height: 190px;
-        }
-
-        /* .card-body p{
-            color: #ffffff;
-
-        } */
-
-         /* Footers */
-        .footer {
-            background-color: #000;
-            border-top: 1px solid #222;
-            padding: 40px 60px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .footer-content {
-            flex: 1 1 200px;
-            margin: 30px 0px;
-        }
-
-        .footer-content h4 {
-            margin-bottom: 14px;
-            color: #fff;
-        }
-
-        .footer-content a {
-            display: block;
-            margin: 8px 0;
-            color: #aaa;
-            text-decoration: none;
-        }
-
-        .footer-bottom {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 60px;
-            background-color: #000;
-        }
-
-        .social-icons img,
-        .store-buttons img {
-            height: 30px;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-
-        .bottom-bar {
-            background: #000;
-            text-align: center;
-            padding: 10px;
-            font-size: 13px;
-            color: #666;
-        }
-
-      
-    </style>
 </head>
 
 <body>
     <div class="main">
-        <div class="nav">
-            <a href="p1_home_carPooling.html" class="logo">RideLoop</a>
-            <div class="left-nav">
-                <a href="p2_ride_carPooling.html">Ride</a>
-                <a href="p3_drive_carPooling.html">Drive</a>
-                <a href="p4_business_carPooling.html">Business</a>
-                <a href="p5_aboutUs_carPooling.html">About</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="p1_home_carPooling.html">RideLoop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="p2_ride_carPooling.html">Ride</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="p3_drive_carPooling.html">Drive</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="p4_business_carPooling.html">Business</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="p5_aboutUs_carPooling.html">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#">Help</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center" href="p8_PofilePage_carPooling.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                    class="bi bi-person-circle me-1" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                    <path fill-rule="evenodd"
+                                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                </svg>
+                                Profile
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="right-nav">
-                <a href="">Help</a>
+        </nav>
 
-                <a href="p8_PofilePage_carPooling.html">
-                    <div class="profile"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                        <path fill-rule="evenodd"
-                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                    </svg></div>
-                </a>
-
-            </div>
-        </div>
 
         <div class="mid">
             <div class="left">
@@ -299,7 +73,7 @@
 
             </div>
             <div class="right">
-                <img src="img/i3_business.jpg" alt="Try Again..">
+                <img src="img/i20_bussiness.jpg" alt="Try Again..">
             </div>
 
         </div>
@@ -312,27 +86,151 @@
                     <img src="img/i4_business.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h4 class="card-text text-light">Employee programs</h3>
-                        <p class="card-text text-light">Our travel and meal solutions offer cost control, spending visibility, and integration with top expense providers.</p>
+                            <p class="card-text text-light">Our travel and meal solutions offer cost control, spending
+                                visibility, and integration with top expense providers.</p>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem; display: inline-block;">
                     <img src="img/i5_business.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h4 class="card-text text-light">Rides for others</h4>
-                        <p class="card-text text-light">Central helps control costs and improve operational efficiency without sacrificing customer experience.</p>
+                        <p class="card-text text-light">Central helps control costs and improve operational efficiency
+                            without sacrificing customer experience.</p>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem; display: inline-block;">
                     <img src="img/i6_business.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h4 class="card-text text-light">Flexible gift solutions</h4>
-                        <p class="card-text text-light">Send vouchers and gift cards for rides and meals—a perfect solution for events or gestures of appreciation.</p>
+                        <p class="card-text text-light">Send vouchers and gift cards for rides and meals—a perfect
+                            solution for events or gestures of appreciation.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-         <!-- Footers -->
+        <div class="row3">
+            <h2>A global platform built on the world's largest mobility network</h2>
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <div class="card">
+                            <img src="https://www.uber-assets.com/image/upload/v1679420518/assets/f9/be74fb-fb61-4e4f-8757-91131e000869/original/badge-money-64x64.svg"
+                                class="card-img-top" alt="..." style="width: 70px;">
+                            <div class="card-body">
+                                <h4 class="card-text text-light">A global platform built on the world's largest mobility
+                                    network</h3>
+                                    <p class="card-text text-light">Our customers agreed they reduced costs on ground
+                                        transportation and meals.¹ Monitor spending and usage and get controls to
+                                        enforce policies..</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+
+                        <div class="card">
+                            <img src="https://www.uber-assets.com/image/upload/v1679420624/assets/39/987ba2-fc85-4c9c-b901-75c3e9fc1852/original/badge-plant-64x64.svg"
+                                class="card-img-top" alt="..." style="width: 70px;">
+                            <div class="card-body">
+                                <h4 class="card-text text-light">Meet sustainability goals with actionable insights</h4>
+                                <p class="card-text text-light">Track CO₂ emissions for every ride on a dashboard
+                                    exclusive to Uber for Business. These insights can help you take action and leverage
+                                    more-sustainable travel options like Uber Green.²</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <div class="card">
+                            <img src="https://www.uber-assets.com/image/upload/v1679421147/assets/d3/44b065-e97f-433d-95f7-6923c8bb3626/original/badge-star-64x64.svg"
+                                class="card-img-top" alt="..." style="width: 70px;">
+                            <div class="card-body">
+                                <h4 class="card-text text-light">Provide an exclusive experience for your teams</h4>
+                                <p class="card-text text-light">In addition to easy expensing and priority support,
+                                    employees in select cities get access to ride options like Uber Business Comfort
+                                    that allow your team to enjoy a premium travel experience.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+
+                        <div class="card">
+                            <img src="https://www.uber-assets.com/image/upload/v1679421252/assets/ea/736be5-8d4a-4f13-a108-614304d68153/original/badge-safety_report-64x64.svg"
+                                class="card-img-top" alt="..." style="width: 70px;">
+                            <div class="card-body">
+                                <h4 class="card-text text-light">Prioritize safety and security for your business</h4>
+                                <p>We offer additional crash-alert notifications for business users. Our latest US
+                                    Safety Report shows that 99.9% of Uber trips are completed without any reported
+                                    safety incidents.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row4">
+            <h2>How companies leverage RideLoop for Business</h2>
+            <div class="row">
+
+                <div class="col">
+
+                    <div class="row">
+                        <div class="col"><img src="img/i17_bussiness.jpg" alt="..." class="imgb"></div>
+                    </div>
+
+                    <div class="row">
+                        <h4>Business travel</h4>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <div class="row">
+
+                        <div class="col"><img src="img/i18_bussiness.jpeg" alt="..." class="imgb"></div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <h4>Courtesy rides</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="row">
+                        <div class="col"> <img src="img/i19_bussiness.jpg" alt="..." class="imgb"></div>
+                    </div>
+
+                    <div class="row">
+                        <h4>Meal Program</h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Footers -->
 
         <div class="footer">
 
@@ -386,7 +284,7 @@
             © 2025 RideLoop Technologies Inc.
         </div>
     </div>
-    
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

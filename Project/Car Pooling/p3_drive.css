@@ -1,0 +1,254 @@
+ .main {
+            width: 100vw;
+        }
+        img{
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover{
+            transform: scale(1.03);
+        }
+
+    /* Removed custom nav styles, now using Bootstrap 5 navbar */
+
+        .drive {
+            height: 60px;
+            background-color: #ffffff;
+        }
+
+        .left-drive {
+            width: 10%;
+            color: black;
+            display: inline-block;
+            margin-top: 4px;
+            font-weight: 600;
+            font-size: 29px;
+            margin-left: 40px;
+        }
+
+        .right-drive {
+            width: 80%;
+            display: inline-block;
+            text-align: right;
+        }
+
+        .right-drive a {
+            color: rgba(0, 0, 0, 0.39);
+            margin: 20px;
+            text-decoration: none;
+            transition: color 0.3s ease-in;
+        }
+
+        .right-drive a:hover {
+            color: black;
+        }
+
+        .ride-details {
+            margin-top: 30px;
+            border: 1px solid lightgray;
+            border-radius: 13px;
+        }
+
+        .mid {
+            width: 100%;
+            display: flex;
+            /* display: block; */
+            justify-content: center;
+            background-color: black;
+        }
+
+        .left {
+            width: 30%;
+            /* display: inline-block; */
+            /* display: flex; */
+            /* align-items: center; */
+            margin-top: 200px;
+
+        }
+
+        .right {
+            margin-top: 40px;
+            width: 40%;
+            margin-left: 20px;
+            /* display: inline-block; */
+            text-align: left;
+            /* display: flex; */
+            /* justify-content: end; */
+            display: flex;
+            justify-content: end;
+            margin-bottom: 10px;
+        }
+
+        .right img {
+            /* display: inline-block; */
+            border-radius: 15px;
+            width: 500px;
+            height: 700px;
+
+        }
+
+        h1 {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 49px;
+            word-spacing: 2px;
+            line-height: 70px;
+        }
+
+        p {
+            line-height: 46px;
+            color: #ffffff;
+        }
+
+        .left button {
+            background-color: black;
+        }
+
+        .input-group-text {
+            border-radius: 0.75rem;
+        }
+
+        .form-control,
+        .form-select {
+            border-radius: 0.75rem;
+        }
+
+        .row2 {
+            background-color: black;
+            color: #ffffff;
+            width: 100%;
+            /* display: flex;
+            justify-content: center; */
+            display: block;
+            padding-top: 40px;
+        }
+
+        .row2 h2 {
+            color: #ffffff;
+            word-spacing: 2px;
+            line-height: 70px;
+            display: block;
+            margin-left: 100px;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .card {
+            background-color: black;            
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+        .card i {
+            /* width: 300px;
+            height: 190px; */
+            font-size: 40px;
+        }
+
+
+
+        /* Footers */
+        .footer {
+            background-color: #000;
+            border-top: 1px solid #222;
+            padding: 40px 60px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-content {
+            flex: 1 1 200px;
+            margin: 30px 0px;
+        }
+
+        .footer-content h4 {
+            margin-bottom: 14px;
+            color: #fff;
+        }
+
+        .footer-content a {
+            display: block;
+            margin: 8px 0;
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: #000;
+        }
+
+        .social-icons img,
+        .store-buttons img {
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .bottom-bar {
+            background: #000;
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            color: #666;
+        }
+
+       
+        @media (max-width: 992px) {
+            .mid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .left, .right {
+                width: 100%;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .right img {
+                width: 100%;
+            }
+
+            .row2{
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .cards {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .mid {
+                padding: 0 0.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+            }
+/* 
+            .card{
+                margin: 20px;
+            } */
+            
+        }
