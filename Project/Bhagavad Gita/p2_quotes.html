@@ -1,11 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bhagavad Gita Quotes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .main {
+            width: 100vw;
+        }
+
+        /* navbar */
+
+        /* make dropdown into 2 columns */
+        .dropdown-columns {
+            columns: 2;
+            width: 360px;
+            /* adjust width */
+        }
+
+        .dropdown-item i {
+            color: orange;
+            margin-right: 6px;
+        }
+
+        /* image  */
+
+        .img-div {
+            position: relative;
+            width: 85%;
+            margin: auto;
+        }
+
+        .img-div img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .img-div .txt {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .img-div .txt h2 {
+            color: aliceblue;
+            font-weight: 700;
+            font-size: 41px;
+        }
+
+        /* .img-div .txt span {
+            color: #ffe598;
+        } */
+
+        .img-div .txt button {
+            margin-top: 20px;
+        }
+
+        .bgcol {
+            width: 100%;
+            height: 300px;
+            z-index: -1;
+            position: absolute;
+            top: 300px;
+            background: linear-gradient(135deg, rgb(248, 239, 220), rgb(251, 251, 224));
+            /* padding: 60px 0;
+      margin-top: 40px; */
+        }
+
+        /* quotes */
+
+        .quote-container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .quote-number {
+            color: orange;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="main">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary position-sticky top-0 z-3">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-4 fw-bold" href="p1_home.html">Bhagavad Gita</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                        <!-- Chapters Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Chapters
+                            </a>
+                            <ul class="dropdown-menu dropdown-columns">
+                                <li><a class="dropdown-item" href="p6_chapter.html"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 1</a></li>
+                                <li><a class="dropdown-item" href="p6_chapter.html"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 2</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 3</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 4</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 5</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 6</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 7</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 8</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 9</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 10</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 11</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 12</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 13</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 14</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 15</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 16</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 17</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-bar-graph"></i>
+                                        Chapter 18</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" href="p2_quotes.html">Quotes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="p3_about.html">About Gita</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Gita AI</a></li>
+                        <li class="nav-item"><a class="nav-link" href="p4_donate.html">Donate</a></li>
+                    </ul>
+
+                    <form class="d-flex ms-5" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    </form>
+                    <div class="d-flex align-items-center ms-3">
+                        <button class="btn btn-outline-secondary me-2" id="themeToggle">
+                            <i class="bi bi-moon-fill"></i>
+                        </button>
+                        <div class="dropdown me-5">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown">
+                                <i class="bi bi-translate"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="hi">हिन्दी</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="sa">संस्कृत</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- img Section -->
+        <div class="img-div">
+            <img src="img/i2_quotes.webp" alt="Bhagavad Gita">
+            <div class="txt">
+                <h2>Bhagavad Gita Quotes By</h2>
+                <h2><span>Lord Krishna</span></h2> 
+            </div>
+        </div>
+
+        <!--carousel-->
+
+        <div id="quoteCarousel" class="carousel slide" data-bs-ride="carousel" style="height: 300px;">
+            <div class="carousel-inner" id="carouselContent"></div>
+
+            <!-- Prev & Next button -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#quoteCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#quoteCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </div>
+
+     <footer class="bg-light text-center text-muted py-4">
+    <div class="container">
     
+      <ul class="nav justify-content-center mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About Us</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">App</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Bhagavad Gita AI</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Acknowledgements</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Blog</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Donate</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">API</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact Us</a></li>
+      </ul>
+
+
+      <div class="mb-3">
+        <a href="#" class="text-muted me-3"><i class="bi bi-facebook fs-4"></i></a>
+        <a href="#" class="text-muted me-3"><i class="bi bi-twitter-x fs-4"></i></a>
+        <a href="#" class="text-muted"><i class="bi bi-github fs-4"></i></a>
+      </div>
+
+      <p class="mb-3">
+        © 2025 Copyright: <span style="color:orange; font-weight:500;">Ved Vyas Foundation</span>.
+        All rights reserved.
+      </p>
+
+   
+      <div>
+        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            alt="Google Play" height="40"></a>
+        <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+            alt="App Store" height="40"></a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+    const gitaQuotes = [
+        {
+            quote: "Whenever dharma declines and the purpose of life is forgotten, I manifest myself on earth. I am born in every age to protect the good, to destroy evil, and to reestablish dharma."
+        },
+        {
+            quote: "You have the right to work, but for the work's sake only. You have no right to the fruits of work."
+        },
+        {
+            quote: "Perform every action with your heart fixed on the Supreme Lord. Renounce attachment to the fruits. Be even-tempered in success and failure."
+        },
+        {
+            quote: "You are what you believe in. You become that which you believe you can become."
+        },
+        {
+            quote: "When meditation is mastered, the mind is unwavering like the flame of a lamp in a windless place."
+        },
+        {
+            quote: "Death is as sure for that which is born, as birth is for that which is dead. Therefore grieve not for what is inevitable."
+        },
+        {
+            quote: "The soul can never be cut to pieces by any weapon, nor burned by fire, nor moistened by water, nor withered by the wind."
+        },
+        {
+            quote: "Perform action, O Arjuna, being steadfast in Yoga, abandoning attachment and balanced in success and failure. Evenness of mind is called Yoga."
+        },
+        {
+            quote: "The mind is difficult to control and restless; but by practice and by dispassion it may be restrained."
+        },
+        {
+            quote: "A person can rise through the efforts of his own mind; or draw himself down in the same manner. Because each person is his own friend or enemy."
+        },
+        {
+            quote: "One who sees inaction in action, and action in inaction, is intelligent among men."
+        },
+        {
+            quote: "The key to equanimity: act without attachment, treat success and failure alike."
+        },
+        {
+            quote: "Set thy heart upon thy work, but never on its reward."
+        },
+        {
+            quote: "Happiness from the senses seems like nectar initially, but it is bitter as poison in the end."
+        },
+        {
+            quote: "There is neither this world nor the world beyond nor happiness for the one who doubts."
+        },
+        {
+            quote: "The truly wise mourn neither for the living nor for the dead."
+        },
+        {
+            quote: "Whenever and wherever there is a decline in virtue and a rise of irreligion, O Arjuna, at that dawn, I appear."
+        },
+        {
+            quote: "To protect the innocent, to annihilate the wicked, to reestablish righteousness, I birth Myself in every age."
+        },
+        {
+            quote: "As the ignorant perform their duties with attachment, the learned may act without attachment, to guide."
+        },
+        {
+            quote: "He who is content with whatever comes, without attachment, not disappointed when he gets nothing, is wise."
+        },
+        {
+            quote: "Calmness, gentleness, silence, self-restraint, and purity: these are the disciplines of the mind."
+        },
+        {
+            quote: "For one who has conquered his mind, a mind is best of friends; for one who has failed to do so, it is the greatest enemy."
+        },
+        {
+            quote: "One who is not disturbed in mind even amidst the threefold miseries or elated when there is happiness, and who is free from attachment, fear and anger, is called a sage of steady mind."
+        },
+        {
+            quote: "Let your aim be the welfare of all. Then act with devotion and without selfishness."
+        },
+        {
+            quote: "Even if you are the most sinful of all sinners, yet you shall cross over all sin by the raft of knowledge."
+        },
+        {
+            quote: "Actions do not cling to Me because I am not attached to their results."
+        },
+        {
+            quote: "Better is one’s own duty though lacking in merit than the duty of another perfectly performed."
+        },
+        {
+            quote: "Man is made by his belief. As he believes, so he becomes."
+        },
+        {
+            quote: "The ignorant work for their own profit; the wise work for the welfare of the world."
+        },
+        {
+            quote: "The soul is eternal, indestructible; weapons cannot pierce it, fire cannot burn it, water cannot wet it."
+        },
+        {
+            quote: "Like changing clothes, the soul passes from one body to another."
+        },
+        {
+            quote: "The soul is never born, nor does it ever die."
+        },
+        {
+            quote: "They are both ignorant who think the soul kills or is killed."
+        },
+        {
+            quote: "As the embodied soul continuously passes from boyhood to youth to old age, so at death, it takes another body."
+        },
+        {
+            quote: "For one who has conquered the mind, the mind is a friend; the uncontrolled mind is one’s greatest enemy."
+        },
+        {
+            quote: "Perform your prescribed duty, for action is better than inaction."
+        },
+        {
+            quote: "One who does nothing for sense gratification but works for self-purification merges into self."
+        },
+        {
+            quote: "The disciplined mind is steady in meditation, like a lamp in a windless place."
+        },
+        {
+            quote: "He who has no attachments can truly love others, for his love is pure."
+        },
+        {
+            quote: "There is nothing as purifying as knowledge."
+        },
+        {
+            quote: "When meditation is mastered, Self reveals itself."
+        },
+        {
+            quote: "From attachment arises desire, from desire arises anger."
+        },
+        {
+            quote: "Through meditation, the yogi obtains the peace that resides in the Self."
+        },
+        {
+            quote: "Even in a land of misery, one who knows it stays free from despair."
+        },
+        {
+            quote: "Whatever happened, happened for good. Whatever is happening, is happening for good."
+        },
+        {
+            quote: "Every individual is working out his own salvation."
+        },
+        {
+            quote: "By selfless service, you will always find fulfillment."
+        },
+        {
+            quote: "Man is made by his belief. As he believes, so he is."
+        },
+        {
+            quote: "Let a man lift himself by his own self, and let him not lower himself."
+        }
+    ];
+
+
+    document.getElementById("carouselContent").innerHTML =
+        gitaQuotes.map((q, i) => `
+      <div class="carousel-item ${i === 0 ? 'active' : ''}">
+        <div class="quote-container">
+          <div class="quote-number">QUOTE ${i + 1}</div>
+          <div class="quote-text">${q.quote}</div>
+        </div>
+      </div>
+    `).join("");
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,53 @@
+.loader {
+  height: 80px;
+  aspect-ratio: 1;
+  padding: 10px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: relative;
+  mask: conic-gradient(#000 0 0) content-box exclude,
+        conic-gradient(#000 0 0);
+  filter: blur(8px);
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-conic-gradient(
+    #0000 0 5%,
+    #111,          /* jet black */
+    #444,          /* dark metallic gray */
+    #888,          /* steel gray */
+    #c0c0c0,       /* silver */
+    #e6e6e6,       /* platinum white */
+    #0000 20% 50%
+  );
+  animation: rotateGlow 1.8s linear infinite, pulse 2.5s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+/* Smooth rotation */
+@keyframes rotateGlow {
+  to { transform: rotate(360deg); }
+}
+
+/* Subtle glowing pulse */
+@keyframes pulse {
+  0%, 100% { filter: brightness(1) blur(8px); }
+  50% { filter: brightness(1.4) blur(12px); }
+}
+
+/* Loader wrapper overlay */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.9); /* luxury dark backdrop */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}

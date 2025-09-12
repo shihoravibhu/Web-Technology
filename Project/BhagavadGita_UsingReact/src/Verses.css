@@ -1,0 +1,64 @@
+.v-number{
+    font-weight: 700;
+    color: black;
+    text-align: center;
+}
+
+.v-text{
+    padding: 17px;
+    color: orange;
+    text-align: center;
+    font-size: 28px;  
+    width: 382px;  
+    margin: auto;
+    font-weight: 500;
+}
+
+.v-transliteration{
+    text-align: center;
+    margin: auto;
+    padding: 17px;
+    font-weight: 600;
+    width: 400px;
+}
+
+.v-wordMeanigs{
+    text-align: center;
+    margin: auto;
+    padding: 17px;
+    font-weight: 600;
+    width: 900px;
+    font-size: large;
+}
+
+.translation{
+    padding-top: 20px; 
+    font-size: 38px;
+    font-weight: 800;
+    color: black;
+    text-align: center;
+}
+
+.v-description{
+    width: 70%;
+    margin: auto;
+    padding: 17px;
+    color: black;  
+    font-size: large;
+}
+
+.commentary{
+    padding-top: 20px; 
+    font-size: 38px;
+    font-weight: 800;
+    color: black;
+    text-align: center;
+}
+
+.v-commentary{
+    width: 70%;
+    margin: auto;
+    padding: 17px;
+    color: black;  
+    font-size: large;
+}

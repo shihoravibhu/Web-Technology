@@ -1,0 +1,312 @@
+/* Navbar dropdown */
+.dropdown-columns {
+  columns: 2;
+  width: 360px;
+}
+.dropdown-item i {
+  color: orange;
+  margin-right: 6px;
+}
+/* Blur glass effect for navbar */
+.navbar-blur {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.6); /* semi-transparent background */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Optional: dark mode variation */
+body.dark .navbar-blur {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Dark Theme Styles - Add this to your App.css */
+
+/* 
+.dark-theme {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .navbar {
+  background-color: #000000 !important;
+  border-bottom: 1px solid #333333 !important;
+}
+
+.dark-theme .navbar-brand {
+  color: #ffffff !important;
+}
+
+.dark-theme .navbar-brand:hover {
+  color: #ffa500 !important;
+}
+
+.dark-theme .nav-link {
+  color: #ffffff !important;
+}
+
+.dark-theme .nav-link:hover,
+.dark-theme .nav-link:focus {
+  color: #ffa500 !important;
+}
+
+.dark-theme .navbar-toggler {
+  border-color: #333333 !important;
+}
+
+.dark-theme .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.dark-theme .dropdown-menu {
+  background-color: #111111 !important;
+  border: 1px solid #333333 !important;
+}
+
+.dark-theme .dropdown-item {
+  color: #ffffff !important;
+}
+
+.dark-theme .dropdown-item:hover,
+.dark-theme .dropdown-item:focus {
+  background-color: #333333 !important;
+  color: #ffa500 !important;
+}
+
+.dark-theme .form-control {
+  background-color: #111111 !important;
+  border: 1px solid #333333 !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .form-control::placeholder {
+  color: #aaaaaa !important;
+}
+
+.dark-theme .form-control:focus {
+  background-color: #111111 !important;
+  border-color: #ffa500 !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .btn-outline-secondary {
+  color: #ffffff !important;
+  border-color: #333333 !important;
+}
+
+.dark-theme .btn-outline-secondary:hover,
+.dark-theme .btn-outline-secondary:focus {
+  background-color: #333333 !important;
+  border-color: #ffa500 !important;
+  color: #ffa500 !important;
+}
+
+.dark-theme .btn-primary {
+  background-color: #ffa500 !important;
+  border-color: #ffa500 !important;
+  color: #000000 !important;
+}
+
+.dark-theme .btn-primary:hover {
+  background-color: #ff8c00 !important;
+  border-color: #ff8c00 !important;
+}
+
+.dark-theme .card {
+  background-color: #111111 !important;
+  border: 1px solid #333333 !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .card-header {
+  background-color: #222222 !important;
+  border-bottom: 1px solid #333333 !important;
+}
+
+.dark-theme .list-group-item {
+  background-color: #111111 !important;
+  border: 1px solid #333333 !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .list-group-item:hover {
+  background-color: #222222 !important;
+}
+
+.dark-theme .modal-content {
+  background-color: #111111 !important;
+  border: 1px solid #333333 !important;
+}
+
+.dark-theme .modal-header {
+  border-bottom: 1px solid #333333 !important;
+}
+
+.dark-theme .modal-footer {
+  border-top: 1px solid #333333 !important;
+}
+
+.dark-theme .modal-title {
+  color: #ffffff !important;
+}
+
+.dark-theme footer {
+  background-color: #000000 !important;
+  border-top: 1px solid #333333 !important;
+}
+
+.dark-theme footer .text-muted {
+  color: #aaaaaa !important;
+}
+
+.dark-theme footer .nav-link {
+  color: #aaaaaa !important;
+}
+
+.dark-theme footer .nav-link:hover {
+  color: #ffa500 !important;
+}
+
+.dark-theme .table {
+  color: #ffffff !important;
+}
+
+.dark-theme .table-striped > tbody > tr:nth-of-type(odd) > td,
+.dark-theme .table-striped > tbody > tr:nth-of-type(odd) > th {
+  background-color: #111111 !important;
+}
+
+.dark-theme .table th {
+  border-color: #333333 !important;
+}
+
+.dark-theme .table td {
+  border-color: #333333 !important;
+}
+
+.dark-theme .alert {
+  background-color: #111111 !important;
+  border: 1px solid #333333 !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .alert-warning {
+  background-color: #332200 !important;
+  border-color: #ffa500 !important;
+  color: #ffcc66 !important;
+}
+
+.dark-theme .alert-danger {
+  background-color: #330000 !important;
+  border-color: #cc0000 !important;
+  color: #ff6666 !important;
+}
+
+.dark-theme .alert-success {
+  background-color: #003300 !important;
+  border-color: #00cc00 !important;
+  color: #66ff66 !important;
+}
+
+.dark-theme .alert-info {
+  background-color: #003333 !important;
+  border-color: #00cccc !important;
+  color: #66ffff !important;
+}
+
+.dark-theme .breadcrumb {
+  background-color: #111111 !important;
+}
+
+.dark-theme .breadcrumb-item a {
+  color: #ffa500 !important;
+}
+
+.dark-theme .breadcrumb-item.active {
+  color: #ffffff !important;
+}
+
+.dark-theme .page-link {
+  background-color: #111111 !important;
+  border: 1px solid #333333 !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .page-link:hover {
+  background-color: #333333 !important;
+  border-color: #ffa500 !important;
+  color: #ffa500 !important;
+}
+
+.dark-theme .page-item.active .page-link {
+  background-color: #ffa500 !important;
+  border-color: #ffa500 !important;
+  color: #000000 !important;
+}
+
+.dark-theme ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark-theme ::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+.dark-theme ::selection {
+  background-color: #ffa500;
+  color: #000000;
+}
+
+.dark-theme ::-moz-selection {
+  background-color: #ffa500;
+  color: #000000;
+}
+
+.dark-theme *:focus {
+  outline: 2px solid #ffa500 !important;
+  outline-offset: 2px !important;
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-theme .verse-text {
+  color: #ffffff !important;
+  background-color: #111111 !important;
+  border: 1px solid #333333 !important;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.dark-theme .chapter-title {
+  color: #ffa500 !important;
+}
+
+.dark-theme .sanskrit-text {
+  color: #ffcc66 !important;
+  font-style: italic;
+}
+
+.dark-theme .translation-text {
+  color: #ffffff !important;
+}
+
+.dark-theme .commentary-text {
+  color: #cccccc !important;
+  background-color: #0a0a0a !important;
+  border-left: 3px solid #ffa500;
+  padding-left: 15px;
+} */

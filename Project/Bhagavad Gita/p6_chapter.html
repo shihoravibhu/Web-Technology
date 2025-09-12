@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhagavad Gita Quotes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      
+        .main {
+            width: 100vw;
+        }
+
+        /* navbar */
+        .nav-link {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-weight: 500;
+    }
+    .flag-icon {
+      width: 22px;
+      height: 16px;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    /* carousel */
+
+    .carousel{
+        width: 77%;
+        margin: auto;
+        
+    }
+
+    .carousel-control-prev-icon{
+        background-color: black;
+        border-radius: 50%;
+        position: fixed;
+        left: 10px;
+        top: 350px;
+    }
+    
+    .carousel-control-next-icon{
+        background-color: black;
+        border-radius: 50%;
+        position: fixed;
+        right: 10px;
+        top: 350px;
+    }   
+
+    .ch-container h5{
+        text-align: center;
+        color: orange;
+        margin: 19px;
+    }
+    
+    .ch-container h2{
+        text-align: center;
+        font-weight: 700;
+        font-size: 37px;
+        margin: 19px;
+    }
+    
+    .ch-container p{
+        word-spacing: 7px;
+        margin: 19px;
+        line-height: 30px;
+    }
+    
+    .ch-container h4{        
+        margin: 19px;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .verses h6{
+        color: orange;
+        font-weight: 600;
+    }
+
+   .verse{
+        transition: all 0.4s ease-out;
+   }
+
+   .verse:hover{
+    background-color: rgb(255, 222, 165);
+    border-radius: 20px;
+    transform: translateY(-5px);
+    padding: 10px;
+   }
+       
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <!-- Navbar -->
+       <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+  <div class="container-fluid">
+   
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="p1_home.html"><i class="bi bi-house-door-fill text-warning"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#"><i class="bi bi-journal-bookmark text-warning"></i> Content</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#"><i class="bi bi-type text-warning"></i> Appearance</a>
+        </li>
+      </ul>
+
+      <form class="d-flex me-3" role="search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </form>
+
+      <button class="btn btn-light me-2" id="darkToggle"><i class="bi bi-moon-fill"></i></button>
+
+      <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+          <img src="https://flagcdn.com/w20/gb.png" class="flag-icon me-1"> EN
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w20/gb.png" class="flag-icon me-2">English</a></li>
+          <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w20/in.png" class="flag-icon me-2">हिंदी</a></li>
+          <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w20/fr.png" class="flag-icon me-2">Français</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+        <!-- carousel-->
+
+        <div id="quoteCarousel" class="carousel slide" data-bs-ride="carousel"  data-bs-interval="5000">
+            <div class="carousel-inner" id="carouselContent"></div>
+
+            <!--button -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#quoteCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" staria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#quoteCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </div>
+
+     <footer class="bg-light text-center text-muted py-4">
+    <div class="container">
+    
+      <ul class="nav justify-content-center mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About Us</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">App</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Bhagavad Gita AI</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Acknowledgements</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Blog</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Donate</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">API</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact Us</a></li>
+      </ul>
+
+
+      <div class="mb-3">
+        <a href="#" class="text-muted me-3"><i class="bi bi-facebook fs-4"></i></a>
+        <a href="#" class="text-muted me-3"><i class="bi bi-twitter-x fs-4"></i></a>
+        <a href="#" class="text-muted"><i class="bi bi-github fs-4"></i></a>
+      </div>
+
+      <p class="mb-3">
+        © 2025 Copyright: <span style="color:orange; font-weight:500;">Ved Vyas Foundation</span>.
+        All rights reserved.
+      </p>
+
+   
+      <div>
+        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            alt="Google Play" height="40"></a>
+        <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+            alt="App Store" height="40"></a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+//      document.getElementById("darkToggle").addEventListener("click", () => {
+//     document.body.classList.toggle("bg-dark");
+//     document.body.classList.toggle("text-white");
+//   });
+
+const chapter = [{
+  number: 1,
+  title: "Arjuna-Vishada-Yoga",
+  summary: `On the battlefield of Kurukṣetra, Dhṛtarāṣṭra asks Sañjaya to describe what is happening. The two armies are arranged for war; Arjuna sees his relatives and friends on both sides, becomes deeply conflicted and overcome with sorrow, and ultimately surrenders, refusing to fight.`,
+  verses: [
+    "Dhṛtarāṣṭra said: O Sañjaya, after gathering on the holy field of Kurukṣetra, and desiring to fight, what did my sons and the sons of Pandu do?",
+    "Sañjaya said: O King, after looking over the army gathered by the sons of Pandu, King Duryodhana approached his teacher Drona and began to speak the following words:",
+    "O Teacher, behold this mighty army of the sons of Pandu, arrayed by the disciple of yours, the son of Drupada.",
+    "Here are heroes, mighty archers, equal in battle to Bhīma and Arjuna: Yuyudhana, Virāta, and Drupada.",
+    "Also great, heroic fighters like Dhṛṣṭaketu, Cekitāna, Kāśirāja, Purujit, Kuntibhoja, and Śaibya.",
+    "Yudhamanyu, the very powerful Uttamauja, Subhadrā's son, and the sons of Draupadī—all great chariot fighters.",
+    "O best among the twice-born, let me describe the outstanding captains of my army for your information.",
+    "Yourself, Bhīṣma, Karṇa, Kripa, Aśvatthāma, Vikarna, and Bhurīśrava.",
+    "Also many other heroes, well-skilled and ready to lay down their lives for me.",
+    "Our army, protected by Bhīṣma, is unconquerable; but the army of the Pandavas, protected by Bhīma, is limited.",
+    "Therefore, arise, and gain glory by killing the enemies in battle with your arrows.",
+    "Then Bhīṣma, the great valiant grandsire of the Kuru dynasty, blew his conch very loudly, like a lion.",
+    "After that, the blast of conch shells, kettledrums, tabors, horns, and trumpets blared forth suddenly, making a tumultuous sound.",
+    "Then Madhusūdana (Krishna) and Arjuna, the archer, sounded their celestial conch shells.",
+    "The blowers of celestial musical instruments were stationed in the Pandava camp.",
+    "Hṛṣīkeśa blew the conch called Pāñcajanya; Arjuna blew Devadatta.",
+    "Bhīma, the doer of mighty deeds, blew Pauṇḍra; the King of Kāśi, Sikhaṇḍī, Dhrishtadyumna, Virāta, and Satyakī.",
+    "Drupada, the sons of Draupadī, and the son of Subhadrā each blew their conch shells.",
+    "The noise of their conch shells was like the roaring of the elements, shaking the hearts of the Kauravas.",
+    "At that time Arjuna, the son of Pāṇḍu, stationed in the chariot adorned with Hanumān's flag, took up his bow and spoke to Krishna as follows:",
+    "O infallible one, draw my chariot between the two armies so that I may see those present here who wish to fight and whom I must combat.",
+    "Let me see those who stand here, eager to fight, for the sake of pleasing the evil-minded son of Dhṛtarāṣṭra.",
+    "Sañjaya said: O descendant of Bharata, thus addressed by Arjuna, Krishna drew up the fine chariot between the two armies.",
+    "In the presence of Bhīṣma, Drona, and all other chieftains, the Lord said: O Partha, behold whose disciples and troops are gathered here for battle.",
+    "There Arjuna could see, within the midst of the armies, his fathers, grandfathers, teachers, maternal uncles, brothers, sons, grandsons, friends, and well-wishers—all there.",
+    "Seeing all these relations and revered persons present there, Arjuna was overwhelmed with compassion and spoke the following words:",
+    "O Krishna, seeing my own kinsmen assembled here with eager resolve to fight, my limbs fail and my mouth dries up.",
+    "My body shivers and my hair stands on end; my bow slips from my hand, and my skin burns all over.",
+    "I am unable to stand, and my mind is reeling; I see inauspicious omens, O Keśava.",
+    "I do not see how any good can come from killing my own kinsmen in this battle, nor can I, my dear Krishna, desire any victory, kingdom, or happiness.",
+    "O Govinda, of what avail to us are kingdoms, happiness, or even life itself when all those for whom we may desire them—teachers, fathers, sons, grandfathers, uncles, in-laws, grandsons—stand here in battle?",
+    "Even though they want to kill me, O Madhusūdana, I do not wish to kill them, even for sovereignty over the three worlds, let alone this earth.",
+    "What joy will be ours, O Janārdana, from killing the sons of Dhṛtarāṣṭra? Sin alone will accrue to us by killing these aggressors.",
+    "Therefore, we should not slay the sons of Dhṛtarāṣṭra, our relatives; how can we be happy, O Mādhava, by killing our kinsmen?",
+    "Though these men, with their intelligence clouded by greed, see no wrong in destroying the family or quarreling with friends, why should we not, who see the wrong in such destruction, desist from this sin, O Janārdana?",
+    "With the destruction of the family, the eternal traditions are destroyed; with the loss of tradition, irreligion overtakes the whole family.",
+    "When irreligion is prominent, O Krishna, the women of the family become corrupt; and from the degradation of womanhood, O descendant of Vrishni, arises unwanted progeny.",
+    "Unwanted progeny brings hell to the family and the destroyers of the family; their ancestors fall, deprived of the offerings of food and water.",
+    "By the evil deeds of those who destroy family traditions, causing intermixture of castes, community projects and family welfare are ruined.",
+    "O Janārdana, those men who destroy family traditions dwell in hell for an indefinite period of time.",
+    "Alas! We are resolved to commit a great sin, in striving to slay our own relatives out of greed for the pleasures of a kingdom.",
+    "It would be better for me if the sons of Dhṛtarāṣṭra, weapons in hand, were to kill me in battle while I remain unarmed and unresisting.",
+    "Sañjaya said: Having thus spoken in the midst of the battlefield, Arjuna cast aside his bow and arrows and sat down on the seat of his chariot, his mind overwhelmed with sorrow.",
+    "What joy, what kingdom, or what happiness can we, being sinners, hope to gain by killing our own kinsmen?",
+    "I would rather live on begging than satisfy the rulers of the earth by killing my family.",
+    "Sañjaya said: Thus overwhelmed with pity and deep compassion, Arjuna, his mind depressed, cast aside his bow and arrows and sat down on the chariot, unable to fight.",
+    "Thus ends the first chapter, Arjuna-Vishāda-Yoga—the yoga of Arjuna's dejection."
+  ]
+},
+
+{
+  number: 2,
+  title: "Sankhya Yoga",
+  summary: "Arjuna's confusion; Krishna teaches on the immortal soul, duty, detached action, and steady wisdom.",
+  verses: [
+    "Sanjaya said: Seeing Arjuna full of compassion, grief-stricken, Krishna spoke the following.",
+    "The Supreme Lord said: How has this delusion overcome you? It is not befitting an honorable person.",
+    "O son of Pritha, do not yield to this weakness. Rise up, O chastiser of the enemy.",
+    "Arjuna said: How can I shoot arrows on men like Bhishma and Drona, worthy of my worship?",
+    "Better to live by begging than to kill our noble teachers; spoils would be tainted with blood.",
+    "We do not know which is better: conquering or being conquered. They stand before us.",
+    "I am confused about my duty, beset with doubt. I am your disciple; please instruct me.",
+    "I find no way to dispel my grief, even if I win a prosperous kingdom or sovereignty.",
+    "Sanjaya said: Having said this, Arjuna told Krishna, I will not fight, and remained silent.",
+    "The Blessed Lord said: Wise persons lament neither for the living nor the dead.",
+    "Never was there a time when I, you, or these kings did not exist, nor will we cease.",
+    "The soul passes from boyhood to youth to old age; similarly it passes to another body at death.",
+    "Happiness and distress appear and disappear like winter and summer; be tolerant.",
+    "One who is steady in both is eligible for liberation.",
+    "Those who understand the truth see neither non-existent as lasting nor existent as destroyed.",
+    "Know that which pervades the body is indestructible; the soul cannot be destroyed.",
+    "Only the body perishes; the soul is eternal. Therefore, fight, O descendant of Bharata.",
+    "One in knowledge knows the self neither slays nor is slain.",
+    "For the soul there is never birth nor death; he is unborn, eternal, undying, primeval.",
+    "How can one who knows this kill or cause to kill?",
+    "As one changes worn clothes, the soul accepts new bodies, leaving the old behind.",
+    "The soul cannot be cut, burned, moistened, or withered by weapons, fire, water, or wind.",
+    "He is unbreakable, insoluble, everlasting, all-pervading, unchangeable.",
+    "He is invisible, inconceivable, bodiless, immutable; knowing this, do not grieve.",
+    "If the soul is ever-born and ever-dies, still do not lament.",
+    "For one born, death is certain; for one dead, birth is certain.",
+    "All beings are unmanifest in their beginning, manifest in interim, unmanifest after annihilation.",
+    "Some see the soul as amazing, some describe him as amazing; few truly understand.",
+    "He who dwells in the body is eternal; you need not grieve for any creature.",
+    "As a ksatriya, fighting religious war is your duty; do not hesitate.",
+    "Happy are ksatriyas to whom such war opportunities come without seeking.",
+    "If you do not fight, you will incur sin and lose reputation.",
+    "Dishonor is worse than death for one honored.",
+    "Great warriors will call you a coward if you leave the battlefield.",
+    "Enemies will scorn your ability; what could be more painful?",
+    "Either death comes and you go to heaven, or victory and you enjoy earthly kingdom. Rise and fight!",
+    "Fight without attachment to results—this avoids sin.",
+    "This analytical knowledge of sankhya I have declared; now listen to work without fruit.",
+    "No loss in this path; even a little advance protects from greatest fear.",
+    "Those whose aim is one and are resolute succeed; not those with branched intellect.",
+    "The small-minded are attached to Vedas' flowery words for heaven, power, birth, etc.",
+    "In those attached to sense enjoyment, devotional determination does not arise.",
+    "Rise above the three modes of nature; be established in the Self.",
+    "Great reservoirs of knowledge surpass small ones; know the purpose behind Vedas.",
+    "You have right to perform duty, not to fruits; never be motive or refrain from duty.",
+    "Be steadfast in yoga, abandoning attachment to success or failure—that is yoga.",
+    "Giving up fruits of action by devotional service, surrender to that consciousness.",
+    "A man engaged in bhakti frees himself from all action's reactions.",
+    "The wise take refuge in the Lord and free themselves from cycle of birth by renouncing fruits.",
+    "When intelligence exits dense forest of delusion, you're indifferent to scripture.",
+    "When mind is fixed in self-realization, you attain Divine consciousness.",
+    "Arjuna asked: What are the signs of one whose consciousness is merged in Transcendence?",
+    "Lord said: One free from desires finds satisfaction in Self—pure transcendental consciousness.",
+    "One undisturbed by misery or happiness, free from attachment, anger, is of steady mind.",
+    "One without attachment, neither rejoicing in good nor lamenting in evil, is of perfect knowledge.",
+    "Like a tortoise withdrawing limbs, one who withdraws senses is situated in knowledge.",
+    "Even though desire remains, experiencing higher taste fixes one in consciousness.",
+    "Strong senses can drag away even discriminative mind.",
+    "He who restrains senses and fixes mind on Me has steady intelligence.",
+    "Attachment leads to lust, from lust anger, from anger delusion, from delusion bewilderment of memory...",
+    "From confusion intelligence is lost; intelligence lost leads one back into material pool.",
+    "Such a person who controls senses gains mercy of Lord and is free from attachment.",
+    "In divine consciousness, threefold miseries vanish and intelligence becomes steady.",
+    "One without steady intelligence lacks peace; without peace no happiness.",
+    "Senses are like strong wind to a boat—can sweep away intelligence.",
+    "What's night for beings is awakening for introspective sage and vice versa.",
+    "One not disturbed by incessant desires, like a steady ocean, achieves peace.",
+    "One who has renounced desires, ego, and false proprietorship attains real peace.",
+    "That is spiritual life; situated thus, even at death, one enters kingdom of God."
+  ]
+},
+ {
+    number: 3,
+    title: "Karma Yoga",
+    summary: "Krishna teaches Arjuna the importance of selfless action and performing one's duty without attachment to results.",
+    verses: [
+    "Arjuna said: O Krishna, if You consider knowledge superior to action, then why do You ask me to engage in this dreadful war? My intellect is confused by Your ambiguous words. Please tell me decisively the one path by which I may attain the highest good.",
+    "The Supreme Lord said: O Arjuna, I have already explained that there are two paths: the path of knowledge for the contemplative and the path of action for the active. Both lead to liberation, but the path of action is superior.",
+    "No one can renounce all action. But one who renounces the fruits of action is said to have truly renounced.",
+    "One cannot achieve freedom from karmic reactions by merely abstaining from work, nor can one attain perfection of knowledge by mere physical renunciation.",
+    "There is no one who can remain without action even for a moment. Indeed, all beings are compelled to act by their qualities born of material nature.",
+    "Those who restrain the external organs of action, while continuing to dwell on sense objects in the mind, certainly delude themselves and are to be called hypocrites.",
+    "On the other hand, one who controls the mind and engages the senses in the service of the Supreme is superior.",
+    "Perform your prescribed duties, for action is better than inaction. A person cannot even maintain his physical body without work.",
+    "Work done as a sacrifice for Vishnu has to be performed; otherwise, work binds one to the material world. Therefore, O son of Kunti, perform your prescribed duties for His satisfaction, and in that way you will always remain free from bondage.",
+    "In the beginning, the Creator, having created mankind together with sacrifices, said: 'By this shall you propagate; let this be the milker of your desires.'",
+    "The gods, being pleased by sacrifices, will also please you; and thus, nourishing one another, you will attain the supreme good.",
+    "The devotees of the gods go to the gods, the devotees of the ancestors go to the ancestors, and the devotees of the ghosts and spirits go to the ghosts and spirits; but those who worship Me will live with Me.",
+    "If you perform your prescribed duties without attachment to the results, you will be free from bondage.",
+    "All living bodies subsist on food grains, which are produced from rain. Rains are produced by performance of yajna [sacrifice], and yajna is born of prescribed duties.",
+    "Regulated activities are prescribed in the Vedas, and the Vedas are directly manifested from the Supreme Personality of Godhead. Consequently, the all-pervading Transcendence is eternally situated in acts of sacrifice.",
+    "My dear Arjuna, a man who does not follow this prescribed Vedic system of sacrifice certainly leads a life of sin, for a person delighting only in the senses lives in vain.",
+    "One who is, however, taking pleasure in the self, who is illumined in the self, who rejoices in and is satisfied with the self only, fully satiated—for him there is no duty.",
+    "A self-realized man has no purpose to fulfill in the discharge of his prescribed duties, nor has he any reason not to perform such work. Nor has he any need to depend on any other living being.",
+    "Therefore, without being attached to the fruits of activities, one should act as a matter of duty; for by working without attachment, one attains the Supreme.",
+    "Even kings like Janaka and others attained the perfectional stage by performance of prescribed duties. Therefore, just for the sake of educating the people in general, you should perform your work.",
+    "Whatever action is performed by a great man, common men follow in his footsteps. And whatever standards he sets by exemplary acts, all the world pursues.",
+    "O son of Prtha, there is no work prescribed for Me within all the three planetary systems. Nor am I in want of anything, nor have I need to obtain anything—and yet I am engaged in work.",
+    "For, if I did not engage in work, O Partha, certainly all men would follow My path.",
+    "If I should cease to work, then all these worlds would be put to ruination. I would also be the cause of creating unwanted population, and I would thereby destroy the peace of all sentient beings.",
+    "As the ignorant perform their duties with attachment to results, similarly the learned may also act, but without attachment, for the sake of leading people on the right path.",
+    "Let not the wise disrupt the minds of the ignorant who are attached to fruitive action. They should not be encouraged to refrain from work, but to engage in work in the spirit of devotion.",
+    "The bewildered spirit soul, under the influence of the three modes of material nature, thinks himself to be the doer of activities, which are in actuality carried out by nature.",
+    "One who is in knowledge of the Absolute Truth, O mighty-armed, does not engage himself in the senses and sense gratification, knowing well the differences between work in devotion and work for fruitive results.",
+    "Bewildered by the modes of material nature, the ignorant fully engage themselves in material activities and become attached. But the wise should not unsettle them, although these duties are inferior due to the performers' lack of knowledge.",
+    "Therefore, O Arjuna, surrendering all your works unto Me, with mind intent on Me, and without desire for gain and free from egoism and lethargy, fight.",
+    "One who executes his duties according to My injunctions and who follows this teaching faithfully, without envy, becomes free from the bondage of fruitive actions.",
+    "But those who, out of envy, disregard these teachings and do not practice them regularly, are to be considered bereft of all knowledge, befooled, and doomed to ignorance and bondage.",
+    "Even a man of knowledge acts according to his own nature, for everyone follows his nature. What can repression accomplish?",
+    "Attraction and repulsion for sense objects are felt by embodied beings, but one should not fall under the control of senses and sense objects because they are stumbling blocks on the path of self-realization.",
+    "It is far better to discharge one's prescribed duties, even though they may be faulty, than another's duties. Destruction in the course of performing one's own duty is better than engaging in another's duties, for to follow another's path is dangerous.",
+    "Arjuna said: O descendant of Vrsni, by what is one impelled to sinful acts, even unwillingly, as if engaged by force?",
+    "The Blessed Lord said: It is lust only, Arjuna, which is born of contact with the material modes of passion and later transformed into wrath, and which is the all-devouring, sinful enemy of this world.",
+    "As fire is covered by smoke, as a mirror is covered by dust, or as the embryo is covered by the womb, similarly, the living entity is covered by different degrees of this lust.",
+    "Thus, a man's pure consciousness is covered by his eternal enemy in the form of lust, which is never satisfied and which burns like fire.",
+    "The senses, the mind and the intelligence are the sitting places of this lust, which veils the real knowledge of the living entity and bewilders him.",
+    "Therefore, O Arjuna, best of the Bharatas, in the very beginning curb this great symbol of sin [lust] by regulating the senses, and slay this destroyer of knowledge and self-realization.",
+    "The working senses are superior to dull matter; mind is higher than the senses; intelligence is still higher than the mind; and he [the soul] is even higher than the intelligence.",
+    "Thus knowing oneself to be transcendental to material senses, mind and intelligence, one should control the lower self by the higher self and thus—by spiritual strength—conquer this insatiable enemy known as lust."
+    ]
+  },
+  {
+    number: 4,
+    title: "Jnana Karma Sanyasa Yoga",
+    summary: "Krishna explains the significance of knowledge and wisdom in performing actions and the importance of renunciation.",
+    verses: [
+    "I taught this imperishable science of yoga to the sun-god Vivasvān; Vivasvān taught it to Manu; and Manu taught it to Ikṣvāku.",
+    "This supreme science was thus received through the chain of disciplic succession, and the saintly kings understood it in that way. But in course of time the succession was broken, and therefore the science as it is appears to be lost.",
+    "That very ancient science of the relationship with the Supreme is today told by Me to you because you are My devotee as well as My friend and can therefore understand the transcendental mystery of this science.",
+    "Arjuna said: O Krishna, You are telling me that this science was first spoken to Vivasvān. How am I to understand that? For you were born after him.",
+    "The Blessed Lord said: Many, many births both you and I have passed. I can remember all of them, but you cannot, O subduer of the enemy!",
+    "Although I am unborn and My transcendental body never deteriorates, and although I am the Lord of all living entities, by My internal energy I still appear in every millennium in My original transcendental form.",
+    "Whenever and wherever there is a decline in religious practice, O descendant of Bharata, and a predominant rise of irreligion—at that time I descend Myself.",
+    "To protect the righteous, to annihilate the miscreants, and to reestablish the principles of religion, I advent Myself millennium after millennium.",
+    "One who knows the transcendental nature of My appearance and activities does not, upon leaving the body, take his birth again; he comes to Me.",
+    "Being freed from attachment, fear, and anger, being fully absorbed in Me, and taking refuge in Me, many, many persons in the past became purified by knowledge of Me and thus attained transcendental love for Me.",
+    "As all surrender unto Me, I reward them accordingly. Everyone follows My path in all respects, O son of Prthā.",
+    "Those who, out of envy, disregard these teachings and do not practice them regularly, are to be considered bereft of all knowledge, befooled, and doomed to ignorance and bondage.",
+    "Even a man of knowledge acts according to his own nature, for everyone follows his nature. What can repression accomplish?",
+    "Attraction and repulsion for sense objects are felt by embodied beings, but one should not fall under the control of senses and sense objects because they are stumbling blocks on the path of self-realization.",
+    "It is far better to discharge one's prescribed duties, even though they may be faulty, than another's duties. Destruction in the course of performing one's own duty is better than engaging in another's duties, for to follow another's path is dangerous.",
+    "Arjuna said: O descendant of Vrsni, by what is one impelled to sinful acts, even unwillingly, as if engaged by force?",
+    "The Blessed Lord said: It is lust only, Arjuna, which is born of contact with the material modes of passion and later transformed into wrath, and which is the all-devouring, sinful enemy of this world.",
+    "As fire is covered by smoke, as a mirror is covered by dust, or as the embryo is covered by the womb, similarly, the living entity is covered by different degrees of this lust.",
+    "Thus, a man's pure consciousness is covered by his eternal enemy in the form of lust, which is never satisfied and which burns like fire.",
+    "The senses, the mind and the intelligence are the sitting places of this lust, which veils the real knowledge of the living entity and bewilders him.",
+    "Therefore, O Arjuna, best of the Bharatas, in the very beginning curb this great symbol of sin [lust] by regulating the senses, and slay this destroyer of knowledge and self-realization.",
+    "The working senses are superior to dull matter; mind is higher than the senses; intelligence is still higher than the mind; and he [the soul] is even higher than the intelligence.",
+    "Thus knowing oneself to be transcendental to material senses, mind and intelligence, one should control the lower self by the higher self and thus—by spiritual strength—conquer this insatiable enemy known as lust.",
+    "One who is not disturbed by the incessant flow of desires—that person is said to have attained peace, who is not affected by pain and pleasure, and who is free from all material desires.",
+    "Those who are free from anger and all material desires, who are self-realized, self-disciplined, and constantly endeavoring for perfection, are assured of liberation in the Supreme in the very near future.",
+    "Shutting out all external sense objects, keeping the eyes and vision concentrated between the two eyebrows, suspending the inward and outward breaths within the nostrils—thus controlling the mind, senses, and intelligence, the transcendentalist becomes free from desire, fear, and anger. One who is always in this state is certainly liberated.",
+    "The sages, knowing Me as the ultimate purpose of all sacrifices and austerities, the Supreme Lord of all planets and demigods and the benefactor and well-wisher of all living entities, attain peace from the pangs of material miseries.",
+    "Those who are free from anger and all material desires, who are self-realized, self-disciplined, and constantly endeavoring for perfection, are assured of liberation in the Supreme in the very near future.",
+    "Shutting out all external sense objects, keeping the eyes and vision concentrated between the two eyebrows, suspending the inward and outward breaths within the nostrils—thus controlling the mind, senses, and intelligence, the transcendentalist becomes free from desire, fear, and anger. One who is always in this state is certainly liberated.",
+    "The sages, knowing Me as the ultimate purpose of all sacrifices and austerities, the Supreme Lord of all planets and demigods and the benefactor and well-wisher of all living entities, attain peace from the pangs of material miseries.",
+    "Those who are free from anger and all material desires, who are self-realized, self-disciplined, and constantly endeavoring for perfection, are assured of liberation in the Supreme in the very near future.",
+    "Shutting out all external sense objects, keeping the eyes and vision concentrated between the two eyebrows, suspending the inward and outward breaths within the nostrils—thus controlling the mind, senses, and intelligence, the transcendentalist becomes free from desire, fear, and anger. One who is always in this state is certainly liberated.",
+    "The sages, knowing Me as the ultimate purpose of all sacrifices and austerities, the Supreme Lord of all planets and demigods and the benefactor and well-wisher of all living entities, attain peace from the pangs of material miseries.",
+    "Those who are free from anger and all material desires, who are self-realized, self-disciplined, and constantly endeavoring for perfection, are assured of liberation in the Supreme in the very near future.",
+    "Shutting out all external sense objects, keeping the eyes and vision concentrated between the two eyebrows, suspending the inward and outward breaths within the nostrils—thus controlling the mind, senses, and intelligence, the transcendentalist becomes free from desire, fear, and anger. One who is always in this state is certainly liberated.",
+    "The sages, knowing Me as the ultimate purpose of all sacrifices and austerities, the Supreme Lord of all planets and demigods and the benefactor and well-wisher of all living entities, attain peace from the pangs of material miseries.",
+    "Those who are free from anger and all material desires, who are self-realized, self-disciplined, and constantly endeavoring for perfection, are assured of liberation in the Supreme in the very near future.",
+    "Shutting out all external sense objects, keeping the eyes and vision concentrated between the two eyebrows, suspending the inward and outward breaths within the nostrils—thus controlling the mind, senses, and intelligence, the transcendentalist becomes free from desire, fear, and anger. One who is always in this state is certainly liberated.",
+    "The sages, knowing Me as the ultimate purpose of all sacrifices and austerities, the Supreme Lord of all planets and demigods and the benefactor and well-wisher of all living entities, attain peace from the pangs of material miseries."
+   ]
+  },
+  {
+    number: 5,
+    title: "Karma Sanyasa Yoga",
+    summary: "Krishna discusses the paths of renunciation and selfless action, emphasizing that both lead to liberation.",
+    verses: [
+    "Arjuna said: Krishna, You have praised the renunciation of action (sanyas) and also the path of selfless action (karma yoga). Please tell me decisively which of these is more beneficial.",
+    "The Supreme Lord said: Both renunciation of action and selfless action lead to the supreme goal. But of the two, selfless action is superior to renunciation of action.",
+    "One who neither hates nor desires the fruits of his actions is said to have truly renounced. Such a person, free from all dualities, easily overcomes material bondage and is completely liberated.",
+    "Only the ignorant speak of renunciation and selfless action as different. Those who are truly learned say that he who applies himself well to one of these paths achieves the results of both.",
+    "The supreme state that is attained by means of renunciation is also attained by selfless action. Hence, those who see renunciation and selfless action as identical, truly see things as they are.",
+    "Perfect renunciation is difficult to attain without performing selfless action, O mighty-armed Arjuna. But the sage who is adept in selfless action quickly attains the Supreme.",
+    "The selfless action yogis, who are of purified intellect, and who control the mind and senses, see the Soul of all souls in every living being. Though performing all kinds of actions, they are never entangled.",
+    "Those steadfast in selfless action, always think, 'I am not the doer,' even while engaged in seeing, hearing, touching, smelling, moving, sleeping, breathing, speaking, excreting, grasping, and opening or closing the eyes. With the light of divine knowledge, they see that it is only the material senses that are moving amongst their objects.",
+    "Those who dedicate their actions to God, abandoning all attachment, remain untouched by sin, just as a lotus leaf is untouched by water.",
+    "The yogis, while giving up attachment, perform actions with their body, senses, mind, and intellect, only for the purpose of self-purification.",
+    "Offering the results of all activities to God, the selfless action yogis attain everlasting peace. Whereas those who, being impelled by their desires, work with a selfish motive become entangled because they are attached to the fruits of their actions.",
+    "The embodied beings who are self-controlled and detached reside happily in the city of nine gates free from thoughts that they are the doers or the cause of anything.",
+    "Neither the sense of doership nor the nature of actions comes from God; nor does He create the fruits of actions. All this is enacted by the modes of material nature.",
+    "Nor does the Supreme Spirit assume anyone's sinful or pious activities. Embodied beings, however, are bewildered because of the ignorance which covers their real knowledge.",
+    "When, however, one is enlightened with the knowledge by which nescience is destroyed, then his knowledge reveals everything, as the sun lights up everything in the daytime.",
+    "When one's intelligence, mind, faith, and refuge are all fixed in the Supreme, then one becomes fully cleansed of misgivings through complete knowledge and thus proceeds straight on the path of liberation.",
+    "The humble sage, by virtue of true knowledge, sees with equal vision a learned and gentle brahmana, a cow, an elephant, a dog, and a dog-eater.",
+    "Those whose minds are established in sameness and equanimity have already conquered the conditions of birth and death. They are flawless like Brahman, and thus they are already situated in Brahman.",
+    "A person who neither rejoices upon achieving something pleasant nor laments upon obtaining something unpleasant, who is self-intelligent, unbewildered, and who knows the science of God, is to be understood as already situated in Transcendence.",
+    "Such a liberated person is not attracted to material sense pleasure or external objects but is always in trance, enjoying the pleasure within. In this way, the self-realized person enjoys unlimited happiness, for he concentrates on the Supreme.",
+    "An intelligent person does not take part in the sources of misery, which are due to contact with the material senses. O son of Kunti, such pleasures have a beginning and an end, and so the wise man does not delight in them.",
+    "Before giving up this present body, if one is able to tolerate the urges of the material senses and check the force of desire and anger, he is a yogi and is happy in this world.",
+    "One whose happiness is within, who is active within, who rejoices within and is illumined within, is actually the perfect mystic. He is liberated in the Supreme, and ultimately he attains the Supreme.",
+    "One who is beyond duality and doubt, whose mind is engaged within, who is always busy working for the welfare of all sentient beings, and who is free from all sins, achieves liberation in the Supreme.",
+    "Those who are free from anger and all material desires, who are self-realized, self-disciplined, and constantly endeavoring for perfection, are assured of liberation in the Supreme in the very near future.",
+    "Shutting out all external sense objects, keeping the eyes and vision concentrated between the two eyebrows, suspending the inward and outward breaths within the nostrils—thus controlling the mind, senses, and intelligence, the transcendentalist becomes free from desire, fear, and anger. One who is always in this state is certainly liberated.",
+    "The sages, knowing Me as the ultimate purpose of all sacrifices and austerities, the Supreme Lord of all planets and demigods and the benefactor and well-wisher of all living entities, attain peace from the pangs of material miseries." 
+    ]
+  },
+  {
+    number: 6,
+    title: "Dhyana Yoga",
+    summary: "Krishna elaborates on the practice of meditation and the discipline required to control the mind and senses.",
+    verses: [
+      "Verse 1: The Supreme Lord said: Those who perform prescribed duties without desiring the results of their actions are actual renunciates and yogis, not those who have merely ceased performing sacrifices.",
+      "Verse 2: Arjuna said: O Krishna, you have praised renunciation of action, and you have also praised the yoga of action. Which one is better? Please tell me decisively.",
+ 
+    ]
+  },
+  {
+    number: 7,
+    title: "Jnana Vijnana Yoga",
+    summary: "Krishna reveals the supreme knowledge and wisdom, explaining the nature of the self and the universe.",
+    verses: [
+      "Verse 1: The Supreme Lord said: My dear Arjuna, because you are never envious of Me, I shall impart to you this most secret wisdom, knowing which you shall be relieved of the miseries of material existence.",
+      "Verse 2: This knowledge is the king of sciences, the most secret of all secrets; it is the purest knowledge, and because it gives direct perception of the self by realization, it is the perfection of religion.",
+      
+    ]
+  },
+  {
+    number: 8,
+    title: "Akshara Brahma Yoga",
+    summary: "Krishna describes the imperishable nature of the soul and the process of attaining the supreme goal.",
+    verses: [
+      "Verse 1: Arjuna said: O Krishna, what is Brahman? What is the self? What are fruitive activities? What is this material manifestation? And what are the demigods? Please explain this to me.",
+      "Verse 2: The Supreme Lord said: The supreme reality is the imperishable Brahman, the eternal soul, and the ultimate goal of all beings.",
+
+    ]
+  },
+  {
+    number: 9,
+    title: "Raja Vidya Raja Guhya Yoga",
+    summary: "Krishna imparts the most confidential knowledge, emphasizing the importance of devotion and surrender.",
+    verses: [
+      "Verse 1: The Supreme Lord said: My dear Arjuna, because you are never envious of Me, I shall impart to you this most secret wisdom, knowing which you shall be relieved of the miseries of material existence.",
+      "Verse 2: This knowledge is the king of sciences, the most secret of all secrets; it is the purest knowledge, and because it gives direct perception of the self by realization, it is the perfection of religion.",
+   
+    ]
+  },
+  {
+    number: 10,
+    title: "Vibhuti Yoga",
+    summary: "Krishna enumerates His divine manifestations in the world, highlighting His omnipresence and supreme power.",
+    verses: [
+      "Verse 1: The Supreme Lord said: My dear Arjuna, listen again to My supreme word, which I shall impart to you for your benefit and which will give you great joy.",
+      "Verse 2: Neither the hosts of demigods nor the great sages know My origin, for, in every respect, I am the source of the demigods and the sages.",
+  
+    ]
+  }
+
+];
+
+
+    document.getElementById("carouselContent").innerHTML=
+
+        chapter.map((ch,i)=>{
+           return  `
+            <div class="carousel-item ${i === 0 ? 'active' : ''}">
+                <div class="ch-container">
+                <h5>CHAPTER ${ch.number}</h5>
+                <h2>${ch.title}</h2>
+                <p>${ch.summary}</p>
+                
+                <h4>${ch.verses.length} Verses</h4>
+                
+                <div class="verses">
+                    
+                    ${ch.verses.map((v,j)=>{
+                        return `
+                        <div class="verse">
+                            <h6> VERSES : ${j+1} </h6>
+                            <p>${v}</p>
+                            </div>
+                            `
+                        }).join("")}
+                        
+                    </div>
+                </div>
+                
+            </div>
+            `
+        }).join("");
+    
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+/* Chapter Header */
+.chapter-header {
+  text-align: center;
+  border-bottom: 2px solid #d7d4d4;
+  padding: 2rem 1rem;
+}
+
+.chapter-number {
+  color: orange;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.chapter-title {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.chapter-summary {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #555;
+}
+
+/* Search & Verse Controls */
+.verse-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #d7d4d4;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: orange;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255,165,0,0.5);
+}
+
+.search-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid orange;
+  background-color: white;
+  color: orange;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: orange;
+  color: white;
+}
+
+/* Verses List */
+.verses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Individual Verse Card */
+.verse-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 25px;
+}
+
+.verse-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  background-color: rgb(255, 222, 165);
+}
+
+.verse-number {
+  width: 150px;
+  color: orange;
+  font-weight: 600;
+}
+
+.verse-text {
+  flex: 1;
+  color: #333;
+  line-height: 1.6;
+}
+
+h3{
+    margin-left: 50px;
+}
+
+.verses{
+    width: 80%;
+    margin: auto;
+}
+
+#link{
+  text-decoration: none;
+}
